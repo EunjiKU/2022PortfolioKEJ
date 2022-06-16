@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* 테이블 */
+.board {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+thead {
+  background-color: var(--light3-color);
+  border-top: 1px solid var(--light2-color);
+  border-bottom: 1px solid var(--light2-color);
+}
+th {
+  height: 70px;
+}
+td {
+  height: 70px;
+}
+.tbody {
+  transition: all 0.3s;
+  border-bottom: 1px solid var(--light2-color);
+}
+.tbody:hover {
+  background: var(--light3-color);
+}
+.tbody:hover .t-tit a {
+  text-decoration: underline;
+}
+.t-num {
+  width: 10%;
+}
+.t-tit {
+  width: 45%;
+}
+.t-tit a {
+  color: var(--black-color);
+}
+/* .t-tit > a{
+  display: block;
+  width: 500px;
+  height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+.tbody .t-tit {
+  text-align: left;
+}
+.t-file {
+  width: 10%;
+}
+.t-file i {
+  color: var(--light-color);
+}
+.t-name {
+  width: 10%;
+}
+.t-date {
+  width: 15%;
+}
+.t-view {
+  width: 10%;
+}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+@media screen and (max-width: 1024px) {
+  .t-tit>a{
+    display: block;
+    width: 300px;
+    /* height: 25px; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 786px) {
+  .t-num {
+    display: none;
+  }
+  .t-file {
+    display: none;
+  }
+  .t-name {
+    display: none;
+  }
+  .t-view {
+    display: none;
+  }
+  .t-tit {
+    width: 74%;
+    padding: 0 14px;
+  }
+  .t-tit>a{
+    display: block;
+    width: 280px;
+    /* height: 25px; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .t-date {
+    width: 26%;
+    padding: 0 14px;
+  }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="전국 떡볶이 순위를 다루는 떡볶이 랭킹 사이트">
+    <meta name="keywords" content="떡볶이, 떡볶이 추천">
+    <meta name="author" content="구은지">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>떡볶이찾아삼만리</title>
+    <link rel="shorcut icon" href="./img/subway_favicon.ico" type="image/x-icon"> <!-- 임의 -->
+    <link rel="apple-touch-icon" sizes="180x180" href=""> <!-- 임의 -->
+    <link rel="icon" sizes="192x192" href=""> <!-- 임의 -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+        }
+        section i {
+            margin-bottom: 0.625rem;
+            font-size: 2.5rem;
+            color: #988C7E;
+        }
+        section p {
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.25rem;
+            color: #422D18;
+            line-height: 1.2;
+        }
+    </style>
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="btn openBtn hideFont">버튼
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h1 class="logo"><a href="index.html"><span class="hideFont">떡볶이 찾아 삼만리</span></a></h1>
+        <div class="btn searchBtn hideFont">찾기
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="hnav">
+            <div class="closeBtn btn">버튼</div>
+            <div class="userinfoBox">
+                <div class="uiLeft">
+                    <img src="" alt="프로필 사진">
+                    <span class="userlevel">vip</span>
+                </div>
+                <div class="uiRight">
+                    <p class="username">볶이보끼알러뷰</p>
+                    <a href="#">로그아웃</a>
+                    <a href="#">마이페이지</a>
+                </div>
+            </div>
+            <ul id="gnb">
+                <li>
+                    <a href="#">미정</a>
+                    <ul class="snb">
+                        <li>
+                            <a href="#">브랜드</a>
+                            <ul class="subsnb">
+                                <li><a href="#">종류</a></li>
+                                <li><a href="#">순위</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">숨은 맛집</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">커뮤니티</a>
+                    <ul class="snb">
+                        <li>
+                            <a href="#">레시피</a>
+                            <ul class="subsnb">
+                                <li>
+                                    <a href="#">레시피</a>
+                                </li>
+                                <li>
+                                    <a href="#">유튜브 레시피</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">자유 게시판</a>
+                        </li>
+                        <li>
+                            <a href="#">맛집 게시판</a>
+                        </li>
+                        <li>
+                            <a href="#">이벤트</a>
+                            <ul class="subsnb">
+                                <li>
+                                    <a href="#">진행중인 이벤트</a>
+                                </li>
+                                <li>
+                                    <a href="#">당첨자 발표</a>
+                                </li>
+                                <li>
+                                    <a href="#">종료된 이벤트</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">주문</a>
+                    <ul class="snb">
+                        <li>
+                            <a href="#">주문</a>
+                        </li>
+                        <li>
+                            <a href="#">주문내역</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+    
+    <!-- underbar -->
+    <nav id="underbar">
+        <ul>
+            <li>
+                <a href="./index.html">
+                    <i class="fa-solid fa-house"></i>
+                    <p>홈</p>
+                </a>
+            </li>
+            <li>
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <p>스크랩</p>
+                </a>
+            </li>
+            <li>
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>장바구니</p>
+                </a>
+            </li>
+            <li>
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-star"></i>
+                    <p>찜</p>
+                </a>
+            </li>
+            <li>
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-pencil"></i>
+                    <p>글쓰기</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- // underbar -->
+
+    <!-- contents -->
+    <section>
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <p>준비 중입니다.<br>불편을 끼쳐 죄송합니다.</p>
+    </section>
+</body>
+</html>

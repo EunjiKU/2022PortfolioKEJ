@@ -1,0 +1,1023 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@font-face {
+    font-family: '62570';
+    src: url('./fonts/62570.ttf');
+}
+@font-face {
+    font-family: 'BMYEONSUNG';
+    src: url('./fonts/BMYEONSUNG_ttf.ttf');
+}
+
+/* root */
+:root {
+    /* font */
+    --color-point : #991509;
+    --color-bg : #FBF1E8;
+    --color-main: #422D18;
+    --color-sub: #58442C;
+    --color-light: #988C7E;
+}
+
+/* rem 관련 폰트 사이즈 */
+html {
+    font-size: 16px;
+    /* font-size: 22px; */
+}
+
+/* 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* 공통영역 */
+body {
+    /* max-width: 768px; */   /* !!!수정!!! */
+    font-family: 'Nanum Gothic', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--color-bg);
+}
+.hideFont {
+    font-size: 0;
+    text-indent: -9999px;
+    line-height: 0;
+}
+
+
+/* 로딩창 */
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    visibility: visible;
+    background-color: var(--color-point);
+    z-index: 9999999;
+    transition: all .4s;
+}
+#loading.active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+    background-color: var(--color-point);
+    padding: 0 0.625rem;
+    z-index: 99;
+    box-shadow: 0px 1px 10px 2px rgba(0,0,0,0.04), 0px 1px 10px 10px rgba(0,0,0,0.02);
+}
+
+header .openBtn{
+    position: relative;
+    width: 1.25rem;
+    height: 0.8125rem;
+    cursor: pointer;
+}
+header .openBtn span{
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.0625rem;
+    border-radius: 0.25rem;
+    background-color: #fff;
+}
+header .openBtn span:nth-of-type(1){
+    top: 0;
+}
+header .openBtn span:nth-of-type(2){
+    top: 50%;
+}
+header .openBtn span:nth-of-type(3){
+    bottom: 0;
+}
+
+header .logo{
+    font-size: 0;
+}
+header .logo a{
+    display: inline-block;
+    width: 4rem;
+    height: 1.875rem;
+    background: url('./img/logo.png') no-repeat center / cover;
+}
+
+header #hnav {
+    position: fixed;
+    width: 70%;
+    height: 100vh;
+    top: 0;
+    left: -70%;
+    border-radius: 0 20px 20px 0;
+    background-color: vaR(--color-bg);
+    transition: all .4s ease-in-out;
+    z-index: 99999;
+}
+
+header #hnav .bnts {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 14px;
+}
+header #hnav .bnts > a ~ a {
+    margin-left: 12px;
+}
+header #hnav .bnts > a i {
+    font-size: 1.375rem;
+    color: var(--color-light);
+}
+header #hnav .bnts > a:nth-of-type(1) i{
+    position: relative;
+}
+header #hnav .bnts > a:nth-of-type(1) i:after{
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: -0px;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: red;
+}
+header #hnav .bnts .closeBtn {
+    margin-left: 12px;
+    position: relative;
+    width: 1.375rem;
+    height: 1.375rem;
+    cursor: pointer;
+}
+header #hnav .bnts .closeBtn span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0.125rem;
+    border-radius: 0.25rem;
+    background-color: var(--color-light);
+}
+header #hnav .bnts .closeBtn span:nth-of-type(1){
+    transform: rotate(45deg);
+}
+header #hnav .bnts .closeBtn span:nth-of-type(2){
+    transform: rotate(-45deg);
+}
+
+header #hnav .userinfoBox {
+    display: flex;
+    align-items: center;
+    margin: 50px 0 30px 12px;
+}
+header #hnav .userinfoBox .uiLeft img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+header #hnav .userinfoBox .uiRight {
+    margin-left: 10px;
+}
+header #hnav .userinfoBox .uiRight .userlevel {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--color-point);
+    color: var(--color-point);
+}
+header #hnav .userinfoBox .uiRight .username {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 8px 0 10px;
+    color: var(--color-main);
+}
+header #hnav .userinfoBox .uiRight a {
+    font-size: 0.75rem;
+    color: var(--color-light);
+}
+header #hnav .userinfoBox .uiRight a ~ a {
+    margin-left: 4px;
+}
+header #hnav .userinfoBox .uiRight a:hover {
+    text-decoration: underline;
+}
+
+header #hnav .bx-promoSlider li {
+    background-color: lightgray;
+    width: 90%;
+    height: 70px;
+}
+
+header #hnav #gnb {
+    padding: 20px 0 40px;
+    background-color: #fff;
+}
+header #hnav #gnb > li > a {
+    display: inline-block;
+    margin: 0 0 22px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-main);
+}
+header #hnav #gnb > li > a > i{
+    margin-right: 4px;
+}
+header #hnav #gnb > li .snb > li > a{
+    display: inline-block;
+    color: var(--color-light);
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0 0 22px 16px;
+}
+
+header .searchBtn{
+    cursor: pointer;
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+header .searchBtn span:nth-of-type(1) {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #fff; /* px */
+    border-radius: 100%;
+}
+header .searchBtn span:nth-of-type(2) {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    width: 0.5rem;
+    height: 0.0625rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    transform: rotate(45deg);
+}
+
+
+/* Black screen */
+#blackWrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9;
+    overflow: hidden;
+    transition: all .4s;
+}
+#blackWrap.active {
+    opacity: 0.6;
+    visibility: visible;
+}
+.not_scroll{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* 스크랩, 찜 팝업창 */
+#popupWrap {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    padding-top: 2.5rem;
+    background-color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: all .4s;
+}
+#popupWrap.active {
+    visibility: visible;
+    opacity: 1;
+}
+#popupWrap i {
+    font-size: 30px;
+}
+#popupWrap p {
+    font-size: 1rem;
+    color: var(--color-main);
+    margin: 0.875rem 0 1.5rem;
+}
+#popupWrap .btnBox {
+    width: 100%;
+    font-size: 0;
+}
+#popupWrap .btnBox .btn {
+    display: inline-block;
+    width: 50%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    font-size: 1rem;
+    background-color: var(--color-point);
+}
+#popupWrap .btnBox .btn:last-of-type {
+    color: var(--color-main);
+    background-color: var(--color-bg);
+    cursor: pointer;
+}
+#popupWrap .btnBox .btn a{
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+}
+
+
+/* underbar */
+#underbar{
+    position: fixed;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4.375rem;
+    overflow: hidden;
+    border-radius: 0.625rem 0.625rem 0 0;
+    box-shadow: 0px -1px 10px 2px rgba(0,0,0,0.04), 0px -1px 10px 10px rgba(0,0,0,0.02);
+    background-color: #fff;
+    z-index: 99;
+}
+#underbar ul{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#underbar ul li{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+}
+#underbar ul li.active a i, #underbar ul li.active a p{
+    color: var(--color-point);
+}
+#underbar ul li a i {
+    color: var(--color-light);
+    font-size: 1.125rem;
+}
+#underbar ul li a p{
+    font-family: 'BMYEONSUNG';
+    font-size: 1rem;
+    color: var(--color-sub);
+    margin-top: 0.5rem;
+}
+
+
+/* contents */
+/* sec 공통영역 */
+.sec {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #fff;
+    margin-bottom: 0.5rem;
+}
+.sec4, .sec5 {
+    padding: 1.75rem 0 1.75rem;
+}
+.sec3, .sec6 {
+    padding: 1.75rem 0 0;
+}
+.sec h2 {
+    /* sec2만 h2 css 다름 */
+    font-family: '62570';
+    font-size: 1.25rem;
+    margin: 0 0 1rem 0.75rem;
+    color : var(--color-point);
+}
+.sec .clickBtn {
+    display: inline-block;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    text-align: center;
+    color: #fff;
+    background-color: var(--color-point);
+    transform: scale(1);
+    cursor: pointer;
+    transition: all .3s;
+}
+.sec3 .clickBtn {
+    /* sec3만 Btn a태그 아니어서 따로 css */
+    padding: 0 0.75rem;
+}
+.sec .clickBtn a {
+    display: inline-block;
+    width: 100%;
+    padding: 0 0.75rem;
+    color: #fff;
+}
+.sec .clickBtn:hover {
+    transform: scale(0.9);
+}
+/* .sec3 .recomTextBox .recomBtn {
+    position: relative;
+    width: 5.375rem;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    text-align: center;
+    color: white;
+    background-color: var(--color-point);
+}
+.recomBtn:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4.875rem;
+    height: 1.375rem;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+} */
+.sec .menuBtnList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0.75rem 1.375rem;
+}
+.sec .menuBtnList li {
+    text-align: center;
+    cursor: pointer;
+}
+.sec .menuBtnList li i{
+    background-color: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    line-height: 2.5rem;
+    font-size: 1.25rem;
+    color: var(--color-light);
+    margin-bottom: 0.625rem;
+}
+/* .sec .menuBtnList li:hover i {
+    color: #fff;
+    background-color: var(--color-light);
+} */
+.sec .menuBtnList li p {
+    color: var(--color-light);
+    font-family: 'BMYEONSUNG';
+    font-size: 1rem;
+}
+.sec .menuBtnList li.active p {
+    color: var(--color-main);
+    font-weight: bold;
+}
+.sec .menu-hash {
+    color: var(--color-light);
+    font-family: 'BMYEONSUNG';
+    font-size: 0.75rem;
+}
+.sec .menu-name {
+    margin: 0.5rem 0 0;
+    font-size: 1.125rem;
+    font-family: '62570';
+    color: var(--color-main);
+}
+.sec .menu-text {
+    color: var(--color-sub);
+    margin: 0.5rem 0.25rem 0 0;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+.sec i.active {
+    color: #FFDE00 !important;
+}
+
+/* sec1 */
+.sec1 {
+    margin-top: 2.5rem;
+}
+.sec1 .bxslider li{
+    overflow: hidden;
+    background-color: yellow;
+}
+.sec1 .bxslider li a img {
+    width: 100%;
+}
+.sec1 .bx-wrapper {
+    position: relative;
+}
+.sec1 .bx-wrapper .bx-controls .bx-pager {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sec1 .bx-wrapper .bx-controls .bx-pager div + div {
+    margin-left: 0.375rem;
+}
+.sec1 .bx-wrapper .bx-controls .bx-pager .bx-pager-item .bx-pager-link{
+    display: inline-block;
+    width: 0.625rem;
+    height: 0.625rem;
+    border: 1px solid #fff; /* px */
+    border-radius: 50%;
+    font-size: 0;
+    text-indent: -9999px;
+    line-height: 0;
+    transition: all .4s;
+}
+.sec1 .bx-wrapper .bx-controls .bx-pager .bx-pager-item .bx-pager-link.active {
+    width: 1rem;
+    border-radius: 1.875rem;
+    background-color: #fff;
+}
+
+/* sec2 */
+.sec2 {
+    padding: 0.75rem 0;
+}
+.sec2:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.sec2 h2 {
+    float: left;
+    margin: 0.5625rem 0.75rem 0 0.75rem;
+    font-size: 1rem;
+}
+.sec2 .popsearchSlide {
+    display: flex;
+    overflow-x: scroll;
+}
+.sec2 .popsearchSlide li{
+    margin-right: 0.625rem;
+    font-size: 0;
+    border: 1px solid var(--color-main);    /* px */
+    border-radius: 2.5rem;
+    transition: all .3s;
+}
+.sec2 .popsearchSlide li:hover {
+    transform: scale(1.1);
+    border: 1px solid var(--color-point);    /* px */
+    background-color: var(--color-point);
+}
+.sec2 .popsearchSlide li:hover a {
+    color: #fff; 
+}
+.sec2 .popsearchSlide li a {
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 2.5rem;
+    color: var(--color-main);
+}
+
+/* sec3 */
+.sec3 {
+    font-size: 0;
+}
+.sec3 .recomTextBox {
+    margin-left: 0.75rem;
+}
+.sec3 .recomTextBox {
+    position: relative;
+}
+.sec3 .recomTextBox .recomText p{
+    font-family: '62570';
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-main);
+}
+.sec3 .recomTextBox .recomText p:nth-child(2){
+    display: inline-block;
+    position: relative;
+    font-size: 1.375rem;
+    margin: 0.5rem 0;
+}
+.sec3 .recomTextBox .recomText p:nth-child(2):before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;    /* px */
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-main);
+}
+.sec3 .recomTextBox .recomBtn {
+    position: absolute;
+    left: 12.5rem;
+    bottom: 0px;
+}
+.sec3 .recomImgBox{
+    display: flex;
+    margin-top: 1rem;
+    background-color: red;
+}
+.sec3 .recomImgBox .recomImg {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.sec3 .recomImgBox .recomImg a p {
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    font-family: '62570';
+    font-size: 0.75rem;
+    color: #fff;
+    z-index: 9;
+}
+.sec3 .recomImgBox .recomImg a img {
+    width: 100%;
+    transition: all .3s;
+}
+.sec3 .recomImgBox .recomImg a:hover img {
+    transform: scale(1.1);
+}
+.sec3 .recomImgBox .recomImg:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.4); */
+    pointer-events: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6));
+    z-index: 9;
+}
+
+/* sec4 */
+.sec .brand-menuBtnList li i {
+    transition: all .3s;
+}
+.sec .brand-menuBtnList li.active i {
+    background-color: var(--color-point);
+    color: #fff;
+}
+.sec4 .BrandList {
+    margin-left: 0.75rem;
+}
+.sec4 .BrandList li {
+    display: none;
+}
+.sec4 .BrandList li.active {
+    display: block;
+}
+.sec4 .BrandList li .BrandBox {
+    width: 100%;
+    display: flex;
+}
+.sec4 .BrandList li .BrandBox .BrandTextBox {
+    position: relative;
+    width: 50%;
+}
+.sec4 .BrandList li .BrandBox .BrandTextBox .menu-price {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-size: 1.125rem;
+    font-family: '62570';
+    color: var(--color-point);
+}
+.sec4 .BrandList li .BrandBox .BrandTextBox .menu-sub {
+    font-family: 'BMYEONSUNG';
+    font-size: 0.75rem;
+    color: var(--color-light);
+}
+.sec4 .BrandList li .BrandBox .BrandTextBox .orderBtn{
+    margin-top: 10px;
+}
+
+.sec4 .BrandList li .BrandBox .BrandImgBox {
+    width: 50%;
+    position: relative;
+}
+.sec4 .BrandList li .BrandBox .BrandImgBox .Brandbest {
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    width: 3.125rem;
+    border-radius: 100%;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+}
+.sec4 .BrandList li .BrandBox .BrandImgBox div {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+}
+.sec4 .BrandList li .BrandBox .BrandImgBox div .BrandImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+.sec4 .BrandList li .BrandBox .BrandImgBox i {
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.875rem;
+    color: #fff;
+    cursor: pointer;
+}
+.sec4 .BrandList li .BrandBox .BrandImgBox i.bookmark {
+    right: 36px;
+}
+.sec4 .BrandList li .BrandBox .BrandImgBox i.star {
+    right: 10px;
+}
+
+/* sec5 */
+.sec5 {
+    width: 100%;
+}
+
+.sec5 .HallSelectBox {
+    margin: 0 0 1.25rem 0.75rem;
+    display: flex;
+}
+.sec5 .HallSelectBox p {
+    margin-right: 0.875rem;
+    font-size: 0.875rem;
+    color: var(--color-main);
+    font-weight: bold;
+}
+
+.sec5 .HallBox {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+.sec5 .HallBox .HallTextBox {
+    position: relative;
+    width: 50%;
+    margin: 0 0.25rem 0 0.75rem;
+}
+.sec5 .HallBox .HallTextBox .orderBtn2{
+    margin-top: 10px;
+}
+
+.sec5 .HallBox .HallMapBox {
+    position: relative;
+    width: 50%;
+    margin-right: 0.75rem;
+    border: 1px solid rgba(152, 140, 126, 0.3); /* px */
+    border-radius: 0.25rem;
+}
+.sec5 .HallBox .HallMapBox div {
+    width: 100%;
+    padding-bottom: 100%;
+}
+.sec5 .HallBox .HallMapBox div img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+}
+.sec5 .HallBox .HallMapBox i {
+    position: absolute;
+    font-size: 1.5rem;
+    color: var(--color-point);
+    cursor: pointer;
+}
+.sec5 .HallBox .HallMapBox i.active {
+    font-size: 1.875rem;
+}
+.sec5 .HallBox .HallMapBox i:nth-of-type(1){
+    left: 30%;
+    top: 30%;
+}
+.sec5 .HallBox .HallMapBox i:nth-of-type(2){
+    left: 40%;
+    top: 60%;
+}
+.sec5 .HallBox .HallMapBox i:nth-of-type(3){
+    left: 60%;
+    top: 30%;
+}
+
+.sec5 .HallImgBox {
+    width: 100%;
+    display: flex;
+}
+.sec5 .HallImgBox .HallImg {
+    width: 50%;
+    position: relative;
+    font-size: 0;
+}
+.sec5 .HallImgBox .HallImg:nth-of-type(2):after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.sec5 .HallImgBox .HallImg img {
+    width: 100%;
+}
+.sec5 .HallImgBox .HallImg i {
+    position: absolute;
+    left:50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    color: #fff;
+    z-index: 999;
+    transform: translate(-50%);
+}
+
+
+/* sec6 */
+.sec .recipe-menuBtnList li i {
+    transition: all .3s;
+}
+.sec .recipe-menuBtnList li.active i {
+    background-color: var(--color-point);
+    color: #fff;
+}
+.sec6 .RecipeList li {
+    display: none;
+    width: 100%;
+}
+.sec6 .RecipeList li.active {
+    display: block;
+}
+.sec6 .RecipeList li > div {
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+}
+.sec6 .RecipeList li > div:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6));
+    z-index: 9;
+}
+.sec6 .RecipeList li > div i {
+    position: absolute;
+    font-size: 0.875rem;
+    bottom: 20px;
+    color: #fff;
+    z-index: 9;
+}
+.sec6 .RecipeList li > div i:nth-of-type(1) {
+    right: 20px;
+}
+.sec6 .RecipeList li > div i:nth-of-type(2) {
+    right: 3.125rem;
+}
+.sec6 .RecipeList li > div a img {
+    width: 100%;
+    position: relative;
+}
+.sec6 .RecipeList li > div a .RecipeTextbox{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 9;
+}
+.sec6 .RecipeList li > div a .RecipeTextbox .menu-hash,
+.sec6 .RecipeList li > div a .RecipeTextbox .menu-name,
+.sec6 .RecipeList li > div a .RecipeTextbox .menu-text {
+    color: #fff;
+}
+
+
+/* footer */
+footer {
+    background-color: #F9F9F9;
+    padding: 1.375rem 0.75rem 5.75rem;
+}
+
+footer .infoBox1 {
+    margin-bottom: 1.25rem;
+}
+footer .infoBox1:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+footer .infoBox1 dl {
+    float: left;
+}
+footer .infoBox1 dl dt{
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #585858;
+}
+footer .infoBox1 dl dd {
+    font-size: 0.625rem;
+    line-height: 1.2;
+    color: #999999;
+}
+footer .infoBox1 dl dd strong{
+    font-size: 1.25rem;   
+    font-weight: bold;
+    color: #585858;
+}
+
+footer .infoBox1 .sns {
+    float: right;
+    display: flex;
+}
+footer .infoBox1 .sns li {
+    width: 2.375rem;
+    height: 2.375rem;
+}
+footer .infoBox1 .sns li + li {
+    margin-left: 0.5rem;
+}
+footer .infoBox1 .sns li a{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #999999;  /* px */
+    border-radius: 100%;
+}
+footer .infoBox1 .sns li a i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #999999;
+    font-size: 1.25rem;
+    transform: translate(-50%, -50%);
+}
+
+footer #fnav ul {
+    display: flex;
+}
+footer #fnav ul li:nth-child(3) {
+    font-weight: bold;
+}
+footer #fnav ul li {
+    margin-right: 10px;
+}
+footer #fnav ul li a {
+    font-size: 0.875rem;
+    color: #585858;
+}
+footer #fnav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer .infoBox2 {
+    margin-top: 0.875rem;
+    color: #999999;
+    font-size: 0.875rem;
+    line-height: 1.2;
+}
+footer .infoBox2 address {
+    display: inline-block;
+}
+
+
+/* --- media query --- */
+@media all and (min-width: 769px){
+    html {
+        font-size: 30px;
+    }
+}

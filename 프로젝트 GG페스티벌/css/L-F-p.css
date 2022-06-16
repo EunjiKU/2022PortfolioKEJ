@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+/* 전체영역 */
+#contents .wrap {
+  width: 440px;
+  margin: 0 auto 120px;
+}
+#login i.error {
+  color: red;
+}
+#login i.pass {
+  color: var(--point-color);
+}
+#login .input.error {
+  border: 1px solid red !important;
+}
+#login .input.pass {
+  border: 1px solid var(--point-color) !important;
+}
+
+/* 공통영역 */
+#login {
+  margin: 60px 0 20px;
+}
+#login p {
+  position: relative;
+}
+#login i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: white;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+#login input {
+  height: 60px;
+  font-size: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+#login .input {
+  border: 1px solid #fff;
+  opacity: 0.5;
+  background: none;
+  transition: all 0.3s;
+  padding-left: 20px;
+}
+#login .input:focus {
+  /* border: 1px solid #fff; */
+  outline: none;
+  background: none;
+}
+#login #userid_box,
+#login #password_box {
+  margin-bottom: 30px;
+}
+#login #submit {
+  cursor: pointer;
+  margin-top: 50px;
+  width: 100%;
+  background: var(--point-color);
+  border: 1px solid var(--point-color);
+}
+/*  */
+/*  */
+/*  */
+#joinforgot {
+  display: flex;
+  justify-content: Center;
+  font-weight: 200;
+  text-align: center;
+}
+#joinforgot a {
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+}
+#joinforgot a:hover {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
+}
+.join {
+  margin-right: 30px;
+}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+@media screen and (min-width: 1025px) {
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+}

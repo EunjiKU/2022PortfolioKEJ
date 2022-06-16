@@ -1,0 +1,52 @@
+@charset "utf-8";
+#content {
+  display: flex;
+  justify-content: center;
+}
+.selectbox {
+  background: var(--light3-color);
+  border-radius: 10px;
+  border: 1px solid var(--light2-color);
+  width: 340px;
+  text-align: center;
+  padding: 40px 2%;
+}
+.selectbox .seleicon {
+  display: inline-block;
+  border: 1px solid var(--light2-color);
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  background: white;
+  color: var(--point-color);
+  position: relative;
+}
+.selectbox .seleicon i {
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.selectbox .selecttit {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.selectbox .selecttit span {
+  color: var(--point-color);
+}
+.selectbox .selectssub {
+  color: var(--gray-color);
+}
+.selectbtn {
+  border: 1px solid var(--point-color);
+  background: var(--point-color);
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  margin-top: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>GGFESTIVAL</title>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/2d323a629b.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link href="./css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="./css/temp.css" rel="stylesheet" type="text/css" />
+    <link href="./css/G4-N.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!-- 헤더 영역 -->
+<header id="header">
+    <div class="hr">
+    <nav id="nav" class="wrap">
+        <h1 id="logo"><a href="./home.html"><img src="./img/로고1.png" alt="로고1"/></a></h1>
+        <div id="habbtn">
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+        </div>
+        <span class="menuboxs menuactive" data-aos="zoom-in">
+            <ul id="mainmenu">
+                <li><a href="./G1-I.html">GG</a>
+                    <ul class="submenu mactive">
+                        <li><a href="./G1-I.html">GG 소개</a></li>
+                        <li><a href="./G1-H.html">행사연혁</a></li>
+                        <li><a href="./G1-F.html">시설안내</a></li>
+                        <li><a href="./G1-T.html">교통안내</a></li>
+                    </ul>
+                </li>
+                <li><a href="./G2-G.html">참가안내</a>
+                    <ul class="submenu mactive">
+                        <li><a href="./G2-G.html">참가게임작</a></li>
+                        <li><a href="./G2-G.html">참가사</a></li>
+                        <li><a href="./G2-G.html">참가 부스</a></li>
+                        <li><a href="./G2-G.html">참가 출품작</a></li>
+                    </ul></li>
+                <li><a href="./G3-D.html">참가신청</a>
+                    <ul class="submenu mactive">
+                        <li><a href="./G3-D.html">개발사 신청</a></li>
+                        <li><a href="./G3-B.html">바이어 신청</a></li>
+                        <li><a href="./G3-P.html">부스 신청</a></li>
+                        <li><a href="./G3-E.html">게임 투고</a></li>
+                        <li><a href="./G3-R.html">참관객 사전등록</a></li>
+                        <li><a href="./G3-C.html">참가 확인</a></li>
+                    </ul></li>
+                <li><a href="./G4-N.html">뉴스</a>
+                    <ul class="submenu mactive">
+                        <li><a href="./G4-N.html">공지사항</a></li>
+                        <li><a href="./G4-P.html">보도자료</a></li>
+                        <li><a href="./G4-E.html">이벤트</a></li>
+                        <li><a href="./G4-S.html">고객센터</a></li>
+                    </ul></li>
+            </ul>
+            <ul id="util">
+                <li><a href="./L.html">LOGIN</a></li>
+                <li><a href="./M.html">MYPAGE</a></li>
+                <li id="langbtn"><a>LANGUAGE <span><i class="fas fa-chevron-up arrowrotate"></i></span></a>
+                <!-- 팝업창 영역 -->
+                    <ul id="language" class="lactive delangpop">
+                        <li><a class="llactive">한국어</a></li>
+                        <li><a>English</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </span>
+    </nav>
+    </div>
+</header>
+<span class="menublack blactive"></span>
+<!-- 팝업창 영역 -->
+<ul id="language" class="lactive delangpops">
+    <li><a href="#" class="llactive">한국어</a></li>
+    <li><a href="#">English</a></li>
+</ul>
+<!-- ------------------ -->
+<!-- ------------------ -->
+<!-- ------------------ -->
+
+<!-- 타이틀 영역 -->
+<section id="tit_sec">
+    <h2 class="common-tit">뉴스</h2>
+    <ul id="tit_menu">
+        <li><a href="./G4-N.html">공지사항</a></li>
+        <li><a href="./G4-P.html" class="titactive">보도자료</a></li>
+        <li><a href="./G4-E.html">이벤트</a></li>
+        <li><a href="./G4-S.html">고객센터</a></li>
+    </ul>
+</section>
+
+<!-- 컨텐츠 영역 -->
+<section id="contents">
+    <div class="wrap">
+    <h3 class="cont-tit">보도자료</h3>
+    <p class="cont-subtit">GoGame!GG FESTIVAL을 소개합니다.</p>
+        <div id="content">
+            <div id="search">
+                <form action="">
+                    <select name="searchsel" id="searchsel">
+                        <option value="">최신순</option>
+                        <option value="">조회순</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요." id="searchtext">
+                    <input type="submit" value="검 색" id="searchbtn">
+                </form>
+            </div>
+            <table class="board">
+                <thead>
+                    <tr>
+                        <th class="t-num">번호</th>
+                        <th class="t-tit">제목</th>
+                        <th class="t-file">첨부</th>
+                        <th class="t-name">작성자</th>
+                        <th class="t-date">작성일</th>
+                        <th class="t-view">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tbody">
+                        <td class="t-num">13</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"><i class="fas fa-paperclip"></i></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                    <tr class="tbody">
+                        <td class="t-num">12</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"><i class="fas fa-paperclip"></i></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                    <tr class="tbody">
+                        <td class="t-num">11</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"><i class="fas fa-paperclip"></i></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                    <tr class="tbody">
+                        <td class="t-num">10</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                    <tr class="tbody">
+                        <td class="t-num">9</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"><i class="fas fa-paperclip"></i></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                    <tr class="tbody">
+                        <td class="t-num">8</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                    <tr class="tbody">
+                        <td class="t-num">7</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                    <tr class="tbody">
+                        <td class="t-num">6</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"><i class="fas fa-paperclip"></i></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                    <tr class="tbody">
+                        <td class="t-num">5</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"><i class="fas fa-paperclip"></i></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                    <tr class="tbody">
+                        <td class="t-num">4</td>
+                        <td class="t-tit"><a href="#">2021년 Go Game! GG FESTIVAL 보도자료</a></td>
+                        <td class="t-file"></td>
+                        <td class="t-name">관리자</td>
+                        <td class="t-date">2021-08-15</td>
+                        <td class="t-view">480</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="btnbox">
+                <div class="slide-button-prev"><i class="fas fa-chevron-left"></i></div>
+                <ul id="page">
+                    <li class="pageactive"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                </ul>
+                <div class="slide-button-next"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------ -->
+<!-- ------------------ -->
+<!-- ------------------ -->
+<!-- 푸터 영역 -->
+<section class="section" id="footer_sec">
+<div class="wrap">
+    <footer id="footer">
+        <ul id="footmenu">
+            <li><a href="#"><span>개인정보취급방침</span></a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+            <li>
+                <ul id="sns">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </li>
+        </ul>
+        <h1 id="footlogo"><img src="./img/로고1.png" alt=""/></h1>
+        <address>
+            <p id="addinfo">상호명(주)버킷플레이스이메일(고객문의) cs@bucketplace.net (제휴문의) contact@bucketplace.net대표이사이승재<br/>
+            사업자등록번호119-86-91245통신판매업신고번호제2018-서울서초-0580호주소서울 서초구 서초대로74길 4 삼성생명서초타워 25, 27층</p>
+            <p id="addcopy">Copyright 2014. bucketplace, Co., Ltd. All rights reserved</p>
+        </address>
+    </footer>
+</div>
+</section>
+</body>
+
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="js/temp.js"></script>
+</html>

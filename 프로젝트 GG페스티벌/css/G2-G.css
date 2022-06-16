@@ -1,0 +1,170 @@
+
+@charset "utf-8";
+/*  */
+#selebox {
+    width: 100%;
+    margin-bottom: 100px;
+    border-radius: 40px;
+    background: var(--light3-color);
+    padding: 40px 80px;
+}
+#selebox .selelist{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+#selebox .selelist:last-of-type{
+    margin-bottom: 0;
+}
+#selebox .selelist .seletit{
+    font-size:18px;
+    font-weight: 500;
+    margin-right: 30px;
+    height: 40px;
+    width: 90px;
+    line-height: 40px;
+}
+#selebox .selelist .seleinfo{
+    font-size: 16px;
+    color:var(--gray-color);
+    padding: 0 24px;
+    margin-right: 10px;
+    border-radius: 30px;
+    height: 40px;
+    background: white;
+    line-height: 40px;
+    vertical-align: top;
+    border: 1px solid var(--light2-color);
+    /* vertical-align: top; */
+    cursor: pointer;
+}
+
+/*  */
+.selactive{
+    color:white !important;
+    background: var(--point-color) !important;
+    border: 1px solid var(--point-color) !important;
+}
+
+
+/*  */
+#gamelist{
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+#gamelist li{
+    width: 23%;
+    margin-bottom: 50px;
+    position: relative;
+}
+#gamelist li .sbox{
+    width: 100%;
+}
+#gamelist li .sbox .imgbox {
+    width: 100%;
+}
+#gamelist li .sbox .imgbox img{
+    border-radius: 20px;
+    width: 100%;
+}
+#gamelist li .sbox .textbox{
+    text-align: center;
+}
+#gamelist li .sbox .textbox .gametit{
+    font-size: 18px;
+    color: var(--black-color);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 600;
+    margin-top: 10px;
+}
+#gamelist li .sbox .textbox .gameinfo{
+    color: var(--light-color);
+    font-weight: 300;
+    margin-top: 0px;
+}
+.gameactive{
+    display: none;
+}
+#gamelist li .overbox {
+    width: 120%;
+    height: 110%;
+    background: var(--point-color);
+    border-radius: 20px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    z-index: 9;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+#gamelist li .overbox .overimgbox{
+    width: 100%;
+    height: 84%;
+}
+#gamelist li .overbox .overgametit{
+    text-align: center;
+    margin-top: 1%;
+}
+#gamelist li .overbox .overgametit .gametit{
+    font-size: 18px;
+    color: white;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 500;
+}
+#gamelist li .overbox .overgametit .gameinfo{
+    color: white;
+    font-weight: 200;
+}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+@media screen and (max-width: 1024px) {
+    /*  */
+    #selebox {
+        width: 100%;
+        margin-bottom: 100px;
+        border-radius: 40px;
+        background: var(--light3-color);
+        padding: 40px 4%;
+    }
+
+    /*  */
+    #gamelist li {
+      width: 48%;
+      overflow: hidden;
+    }
+  }
+  @media screen and (max-width: 786px) {
+      /*  */
+      #selebox .selelist .seletit{
+        font-size:18px;
+        font-weight: 500;
+        margin-right: 30px;
+        height: 40px;
+        width: 100%;
+        line-height: 40px;
+    }
+    #selebox .selelist .seleinfo{
+        margin-top: 6px;
+    }
+
+      /*  */
+    #gamelist li {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+  

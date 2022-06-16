@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="전국 떡볶이 순위를 다루는 떡볶이 랭킹 사이트">
+    <meta name="keywords" content="떡볶이, 떡볶이 추천">
+    <meta name="author" content="구은지">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>떡볶이찾아삼만리</title>
+    <!-- <link rel="shorcut icon" href="./img/subway_favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+    <link rel="icon" sizes="192x192" href=""> -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- 로딩창 -->
+    <div id="loading">
+        <h4></h4>
+    </div>
+    <!-- // -->
+
+    <!-- underbar -->
+    <nav id="underbar">
+        <ul>
+            <li class="active">
+                <a href="./index.html">
+                    <i class="fa-solid fa-house"></i>
+                    <p>홈</p>
+                </a>
+            </li>
+            <li>
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <p>스크랩</p>
+                </a>
+            </li>
+            <li>
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>장바구니</p>
+                </a>
+            </li>
+            <li>
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-star"></i>
+                    <p>찜</p>
+                </a>
+            </li>
+            <li>
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-pencil"></i>
+                    <p>글쓰기</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- // underbar -->
+
+    <!-- header -->
+    <header>
+        <div class="btn openBtn hideFont">버튼
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h1 class="logo"><a href="index.html"><span class="hideFont">떡볶이 찾아 삼만리</span></a></h1>
+        <div class="btn searchBtn hideFont">찾기
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="hnav">
+            <div class="bnts">
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-bell"></i>
+                </a>
+                <a href="./sub-test.html">
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+                <div class="closeBtn btn hideFont">버튼
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="userinfoBox">
+                <div class="uiLeft">
+                    <img src="./img/userprofile.jpg" alt="프로필 사진">
+                </div>
+                <div class="uiRight">
+                    <span class="userlevel"><i class="fa-solid fa-crown"></i> vip</span>
+                    <p class="username">볶이보끼알러뷰님</p>
+                    <a href="#">로그아웃</a>
+                    <a href="#">마이페이지</a>
+                </div>
+            </div>
+            <ul class="bx-promoSlider">
+                <li>첫번째 광고</li>
+                <li>두번째 광고</li>
+                <li>세번째 광고</li>
+            </ul>
+            <ul id="gnb">
+                <li>
+                    <a href="./sub-test.html">
+                        <i class="fa-solid fa-comment"></i>
+                        미정
+                    </a>
+                    <ul class="snb">
+                        <li>
+                            <a href="./sub-test.html">브랜드</a>
+                        </li>
+                        <li>
+                            <a href="./sub-test.html">숨은 맛집</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./sub-test.html">
+                        <i class="fa-solid fa-comment"></i>
+                        커뮤니티
+                    </a>
+                    <ul class="snb">
+                        <li>
+                            <a href="./sub-test.html">레시피</a>
+                        </li>
+                        <li>
+                            <a href="./sub-test.html">자유 게시판</a>
+                        </li>
+                        <li>
+                            <a href="./sub-test.html">맛집 게시판</a>
+                        </li>
+                        <li>
+                            <a href="./sub-test.html">이벤트</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./sub-test.html">
+                        <i class="fa-solid fa-comment"></i>
+                        주문
+                    </a>
+                    <ul class="snb">
+                        <li>
+                            <a href="./sub-test.html">주문</a>
+                        </li>
+                        <li>
+                            <a href="./sub-test.html">주문내역</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+    
+    <!-- Black screen -->
+    <div id="blackWrap"></div>
+    <!-- // Black screen -->
+
+    <!-- 스크랩, 찜 팝업창 -->
+    <div id="popupWrap">
+        <!-- <i class="star fa-solid fa-star"></i> -->
+        <i class="bookmark fa-solid fa-bookmark"></i>
+        <p>스크랩 되었습니다.</p>
+        <div class="btnBox">
+            <div class="btn goBtn"><a href="./sub-test.html">보러가기</a></div>
+            <div class="btn conBtn">계속하기</div>
+        </div>
+    </div>
+    <!-- // 스크랩, 찜 팝업창 -->
+
+    <!-- contents -->
+    <section class="sec1 sec">
+        <ul class="bxslider">
+            <li><a href="./sub-test.html"><img src="./img/main_banner.png" alt="최초 떡볶이 커뮤니티 사이트 오픈. 떡볶이 찾아 삼만리 어플"></a></li>
+            <li><a href="./sub-test.html"><img src="./img/main_banner.png" alt=""></a></li>
+        </ul>
+    </section>
+    <section class="sec2 sec">
+        <h2>인기 검색어</h2>
+        <ul class="popsearchSlide">
+            <li><a href="./sub-test.html"># 동대문엽기떡볶이 엽기메뉴</a></li>
+            <li><a href="./sub-test.html"># 신전떡볶이 떡볶이</a></li>
+            <li><a href="./sub-test.html"># 떡순튀 떡볶이</a></li>
+            <li><a href="./sub-test.html"># 우리할매 떡볶이 가래떡 떡볶이</a></li>
+            <li><a href="./sub-test.html"># 배떡 로제떡볶이</a></li>
+            <li><a href="./sub-test.html"># 빨호 떡볶이 떡볶이</a></li>
+        </ul>
+    </section>
+    <section class="sec3 sec">
+        <h2>오늘의 추천메뉴</h2>
+        <div class="recomTextBox">
+            <div class="recomText">
+                <p>오늘은</p>
+                <p class="recomMenu">????????</p>
+                <p>어떠세요?</p>
+            </div>
+            <div class="btn clickBtn recomBtn">추천받기</div>
+        </div>
+        <div class="recomImgBox">
+            <div class="recomImg">
+                <a href="./sub-test.html">
+                    <p>추천 브랜드</p>
+                    <img src="./img/recom1-1.png" alt="">
+                </a>
+            </div>
+            <div class="recomImg">
+                <a href="./sub-test.html">
+                    <p>추천 레시피</p>
+                    <img src="./img/recom1-2.png" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="sec4 sec">
+        <h2>브랜드 순위</h2>
+        <ul class="menuBtnList brand-menuBtnList">
+            <li class="active" data-target="#menu1">
+                <i class="fa-solid fa-utensils"></i>
+                <p>기본</p>
+            </li>
+            <li data-target="#menu2">
+                <i class="fa-solid fa-utensils"></i>
+                <p>로제</p>
+            </li>
+            <li data-target="#menu3">
+                <i class="fa-solid fa-utensils"></i>
+                <p>짜장</p>
+            </li>
+            <li data-target="#menu4">
+                <i class="fa-solid fa-utensils"></i>
+                <p>크림</p>
+            </li>
+            <li data-target="#menu5">
+                <i class="fa-solid fa-utensils"></i>
+                <p>해물</p>
+            </li>
+            <li data-target="#menu6">
+                <i class="fa-solid fa-utensils"></i>
+                <p>고기</p>
+            </li>
+            <li data-target="#menu7">
+                <i class="fa-solid fa-utensils"></i>
+                <p>기타</p>
+            </li>
+        </ul>
+        <ul class="BrandList">
+            <li class="active" id="menu1">
+                <div class="bx-brandSlider1">
+                    <div class="BrandBox">
+                        <div class="BrandTextBox">
+                            <span class="menu-hash">#동대문엽기떡볶이 #치즈 떡볶이</span>
+                            <p class="menu-name">엽기 메뉴</p>
+                            <p class="menu-price">14,000원</p>
+                            <span class="menu-sub">(3~4인분 기준)</span>
+                            <p class="menu-text">꾸준히 사랑받아오고 있는 엽떡! 다양한 토핑 추가로 내 맘대로~</p>
+                            <div class="btn clickBtn orderBtn"><a href="./sub-test.html">주문하기</a></div>
+                        </div>
+                        <div class="BrandImgBox">
+                            <div><img class="BrandImg" src="./img/brand1.png" alt=""></div>
+                            <img class="Brandbest" src="./img/best1.png" alt="브랜드 1위 떡볶이">
+                            <i class="star fa-solid fa-star"></i>
+                            <i class="bookmark fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="menu2">
+                <div class="bx-brandSlider2">
+                    <div class="BrandBox">
+                        <div class="BrandTextBox">
+                            <span class="menu-hash">#배떡 #로제 떡볶이</span>
+                            <p class="menu-name">로제 떡볶이</p>
+                            <p class="menu-price">10,000원</p>
+                            <span class="menu-sub">(1~2인분 기준)</span>
+                            <p class="menu-text">신드롬을 일으킨 배떡 로제 떡볶이! 단짠단짠으로 중독성이 쭉~</p>
+                            <div class="btn clickBtn orderBtn"><a href="./sub-test.html">주문하기</a></div>
+                        </div>
+                        <div class="BrandImgBox">
+                            <div><img class="BrandImg" src="./img/brand2.png" alt=""></div>
+                            <img class="Brandbest" src="./img/best1.png" alt="브랜드 1위 떡볶이">
+                            <i class="star fa-solid fa-star"></i>
+                            <i class="bookmark fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="menu3">
+                <div class="bx-brandSlider3">
+                    <div class="BrandBox">
+                        <div class="BrandTextBox">
+                            <span class="menu-hash">#떡볶당 #짜장 떡볶이</span>
+                            <p class="menu-name">불맛 짜장 떡볶이</p>
+                            <p class="menu-price">9,500원</p>
+                            <span class="menu-sub">(1~2인분 기준)</span>
+                            <p class="menu-text">입 안에서 불 맛이 피어오르는 중화 떡볶이! 짜장면 대신 짜장 떡볶이!</p>
+                            <div class="btn clickBtn orderBtn"><a href="./sub-test.html">주문하기</a></div>
+                        </div>
+                        <div class="BrandImgBox">
+                            <div><img class="BrandImg" src="./img/brand3.png" alt=""></div>
+                            <img class="Brandbest" src="./img/best1.png" alt="브랜드 1위 떡볶이">
+                            <i class="star fa-solid fa-star"></i>
+                            <i class="bookmark fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="menu4">
+                <div class="bx-brandSlider4">
+                    <div class="BrandBox">
+                        <div class="BrandTextBox">
+                            <span class="menu-hash">#삼첩분식 #크림 떡볶이</span>
+                            <p class="menu-name">바질 크림 떡볶이</p>
+                            <p class="menu-price">9,900원</p>
+                            <span class="menu-sub">(1~2인분 기준)</span>
+                            <p class="menu-text">꾸덕한 크림과 바질 그리고 조금의 매콤함이 함유된 바질 크림 떡볶이!</p>
+                            <div class="btn clickBtn orderBtn"><a href="./sub-test.html">주문하기</a></div>
+                        </div>
+                        <div class="BrandImgBox">
+                            <div><img class="BrandImg" src="./img/brand4.png" alt=""></div>
+                            <img class="Brandbest" src="./img/best1.png" alt="브랜드 1위 떡볶이">
+                            <i class="star fa-solid fa-star"></i>
+                            <i class="bookmark fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="menu5">
+                <div class="bx-brandSlider5">
+                    <div class="BrandBox">
+                        <div class="BrandTextBox">
+                            <span class="menu-hash">#깡패 떡볶이 #해물 떡볶이</span>
+                            <p class="menu-name">해물 떡볶이</p>
+                            <p class="menu-price">19,000원</p>
+                            <span class="menu-sub">(3~4인분 기준)</span>
+                            <p class="menu-text">바다의 맛을 떡볶이에 담다! 시원한 해물과 쫄깃한 떡볶이의 환상궁합!</p>
+                            <div class="btn clickBtn orderBtn"><a href="./sub-test.html">주문하기</a></div>
+                        </div>
+                        <div class="BrandImgBox">
+                            <div><img class="BrandImg" src="./img/brand5.png" alt=""></div>
+                            <img class="Brandbest" src="./img/best1.png" alt="브랜드 1위 떡볶이">
+                            <i class="star fa-solid fa-star"></i>
+                            <i class="bookmark fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="menu6">
+                <div class="bx-brandSlider6">
+                    <div class="BrandBox">
+                        <div class="BrandTextBox">
+                            <span class="menu-hash">#청년다방 #차돌 떡볶이</span>
+                            <p class="menu-name">차돌 떡볶이</p>
+                            <p class="menu-price">16,500원</p>
+                            <span class="menu-sub">(1~2인분 기준)</span>
+                            <p class="menu-text">쫄깃하고 탱탱한 떡과 불향을 가득 담은 차돌이 환상의 궁합!</p>
+                            <div class="btn clickBtn orderBtn"><a href="./sub-test.html">주문하기</a></div>
+                        </div>
+                        <div class="BrandImgBox">
+                            <div><img class="BrandImg" src="./img/brand6.png" alt=""></div>
+                            <img class="Brandbest" src="./img/best1.png" alt="브랜드 1위 떡볶이">
+                            <i class="star fa-solid fa-star"></i>
+                            <i class="bookmark fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="menu7">
+                <div class="bx-brandSlider7">
+                    <div class="BrandBox">
+                        <div class="BrandTextBox">
+                            <span class="menu-hash">#청년다방 #기타 떡볶이</span>
+                            <p class="menu-name">피자로니 떡볶이</p>
+                            <p class="menu-price">16,500원</p>
+                            <span class="menu-sub">(1~2인분 기준)</span>
+                            <p class="menu-text">토마토 미트소스와 매콤한 떡볶이 소스의 환상조합!</p>
+                            <div class="btn clickBtn orderBtn"><a href="./sub-test.html">주문하기</a></div>
+                        </div>
+                        <div class="BrandImgBox">
+                            <div><img class="BrandImg" src="./img/brand7.png" alt=""></div>
+                            <img class="Brandbest" src="./img/best1.png" alt="브랜드 1위 떡볶이">
+                            <i class="star fa-solid fa-star"></i>
+                            <i class="bookmark fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="sec5 sec">
+        <h2>순위 맛집</h2>
+        <div class="HallSelectBox">
+            <p>맛집 지역</p>
+            <select>
+                <option value="">서울</option>
+                <option value="">인천</option>
+                <option value="">경기</option>
+            </select>
+        </div>
+        <div class="HallBox">
+            <div class="HallTextBox">
+                <span class="menu-hash">#즉석 #치즈 #떡볶이</span>
+                <p class="menu-name">옛날 떡볶이</p>
+                <p class="menu-text">추억이 떠오르는 즉석 떡볶이!
+                    눈 앞에서 보글보글 끓는 떡볶이에
+                    입맛대로 사리를 넣어서~</p>
+                <div class="btn clickBtn orderBtn2"><a href="./sub-test.html">주문하기</a></div>
+            </div>
+            <div class="HallMapBox">
+                <div><img src="./img/Incheon-map.png" alt="인천 맛집 위치 지도"></div>
+                <i class="active fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+        </div>
+        <div class="HallImgBox">
+            <div class="HallImg">
+                <img src="./img/Incheon-hall1.png" alt="">
+            </div>
+            <div class="HallImg">
+                <img src="./img/Incheon-hall2.png" alt="">
+                <i class="fa-solid fa-circle-ellipsis"></i>
+            </div>
+        </div>
+    </section>
+    <section class="sec6 sec">
+        <h2>오늘의 레시피</h2>
+        <ul class="menuBtnList recipe-menuBtnList">
+            <li class="active" data-target="#recipe1">
+                <i class="fa-solid fa-utensils"></i>
+                <p>기본</p>
+            </li>
+            <li data-target="#recipe2">
+                <i class="fa-solid fa-utensils"></i>
+                <p>로제</p>
+            </li>
+            <li data-target="#recipe3">
+                <i class="fa-solid fa-utensils"></i>
+                <p>짜장</p>
+            </li>
+            <li data-target="#recipe4">
+                <i class="fa-solid fa-utensils"></i>
+                <p>크림</p>
+            </li>
+            <li data-target="#recipe5">
+                <i class="fa-solid fa-utensils"></i>
+                <p>해물</p>
+            </li>
+            <li data-target="#recipe6">
+                <i class="fa-solid fa-utensils"></i>
+                <p>고기</p>
+            </li>
+            <li data-target="#recipe7">
+                <i class="fa-solid fa-utensils"></i>
+                <p>기타</p>
+            </li>
+        </ul>
+        <ul class="RecipeList">
+            <li class="active" id="recipe1">
+                <div>
+                    <a href="./sub-test.html">
+                        <img src="./img/recipe1-1.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#어묵 #어묵 떡볶이</span>
+                            <p class="menu-name">어묵 떡볶이</p>
+                            <p class="menu-text">나는 떡볶이도 좋고~ 어묵도 좋아서~<br>어묵 떡볶이!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+                <div>
+                    <a href="https://youtu.be/t4Es8mwdYlE" target="_blank">
+                        <img src="./img/recipe1-2.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#백종원 #분식집 #분식집 떡볶이</span>
+                            <p class="menu-name">분식집 떡볶이</p>
+                            <p class="menu-text">드디어 집에서 해먹는 레시피 공개!<br/>황금비율... 추억의 바로 그 맛!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+            </li>
+            <li id="recipe2">
+                <div>
+                    <a href="./sub-test.html">
+                        <img src="./img/recipe2-1.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#로제 #로제 떡볶이</span>
+                            <p class="menu-name">로제 떡볶이</p>
+                            <p class="menu-text">나는 떡볶이도 좋고~ 어묵도 좋아서~<br>어묵 떡볶이!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+                <div>
+                    <a href="https://youtu.be/t4Es8mwdYlE" target="_blank">
+                        <img src="./img/recipe2-2.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#박씨부인 #로제 #로제 떡볶이</span>
+                            <p class="menu-name">로제 떡볶이</p>
+                            <p class="menu-text">드디어 집에서 해먹는 레시피 공개!<br/>황금비율... 추억의 바로 그 맛!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+            </li>
+            <li id="recipe3">
+                <div>
+                    <a href="./sub-test.html">
+                        <img src="./img/recipe3-1.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#짜장 #짜장 떡볶이</span>
+                            <p class="menu-name">짜장 떡볶이</p>
+                            <p class="menu-text">나는 떡볶이도 좋고~ 어묵도 좋아서~<br>어묵 떡볶이!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+                <div>
+                    <a href="https://youtu.be/t4Es8mwdYlE" target="_blank">
+                        <img src="./img/recipe3-2.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#백종원 #짜장 #짜장 떡볶이</span>
+                            <p class="menu-name">짜장 떡볶이</p>
+                            <p class="menu-text">드디어 집에서 해먹는 레시피 공개!<br/>황금비율... 추억의 바로 그 맛!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+            </li>
+            <li id="recipe4">
+                <div>
+                    <a href="./sub-test.html">
+                        <img src="./img/recipe4-1.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#크림 #크림 떡볶이</span>
+                            <p class="menu-name">크림 떡볶이</p>
+                            <p class="menu-text">나는 떡볶이도 좋고~ 어묵도 좋아서~<br>어묵 떡볶이!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+                <div>
+                    <a href="https://youtu.be/t4Es8mwdYlE" target="_blank">
+                        <img src="./img/recipe4-2.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#백종원 #크림 #크림 떡볶이</span>
+                            <p class="menu-name">크림 떡볶이</p>
+                            <p class="menu-text">드디어 집에서 해먹는 레시피 공개!<br/>황금비율... 추억의 바로 그 맛!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+            </li>
+            <li id="recipe5">
+                <div>
+                    <a href="./sub-test.html">
+                        <img src="./img/recipe5-1.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#해물 #해물 떡볶이</span>
+                            <p class="menu-name">해물 떡볶이</p>
+                            <p class="menu-text">나는 떡볶이도 좋고~ 어묵도 좋아서~<br>어묵 떡볶이!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+                <div>
+                    <a href="https://youtu.be/t4Es8mwdYlE" target="_blank">
+                        <img src="./img/recipe5-2.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#해물 #해물 떡볶이</span>
+                            <p class="menu-name">해물 떡볶이</p>
+                            <p class="menu-text">드디어 집에서 해먹는 레시피 공개!<br/>황금비율... 추억의 바로 그 맛!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+            </li>
+            <li id="recipe6">
+                <div>
+                    <a href="./sub-test.html">
+                        <img src="./img/recipe6-1.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#고기 #고기 떡볶이</span>
+                            <p class="menu-name">고기 떡볶이</p>
+                            <p class="menu-text">나는 떡볶이도 좋고~ 어묵도 좋아서~<br>어묵 떡볶이!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+                <div>
+                    <a href="https://youtu.be/t4Es8mwdYlE" target="_blank">
+                        <img src="./img/recipe6-2.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#고기 #고기 떡볶이</span>
+                            <p class="menu-name">고기 떡볶이</p>
+                            <p class="menu-text">드디어 집에서 해먹는 레시피 공개!<br/>황금비율... 추억의 바로 그 맛!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+            </li>
+            <li id="recipe7">
+                <div>
+                    <a href="./sub-test.html">
+                        <img src="./img/recipe7-1.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#꿀 #꿀 떡볶이</span>
+                            <p class="menu-name">꿀 떡볶이</p>
+                            <p class="menu-text">나는 떡볶이도 좋고~ 어묵도 좋아서~<br>어묵 떡볶이!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+                <div>
+                    <a href="https://youtu.be/t4Es8mwdYlE" target="_blank">
+                        <img src="./img/recipe7-2.png" alt="">
+                        <div class="RecipeTextbox">
+                            <span class="menu-hash">#고추장 #기름 #기름 떡볶이</span>
+                            <p class="menu-name">기름 떡볶이</p>
+                            <p class="menu-text">드디어 집에서 해먹는 레시피 공개!<br/>황금비율... 추억의 바로 그 맛!</p>
+                        </div>
+                    </a>
+                    <i class="star fa-solid fa-star"></i>
+                    <i class="bookmark fa-solid fa-bookmark"></i>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="infoBox1">
+            <dl>
+                <dt>고객센터</dt>
+                <dd><strong>1234-1234</strong></dd>
+                <dd>평일 11:00 ~ 16:00 (주말 및 공휴일 휴무)</dd>
+            </dl>
+            <ul class="sns">
+                <li>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        <nav id="fnav">
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">이용안내</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </nav>
+        <div class="infoBox2">
+            <address>인천시 ㅇㅇ구 ㅇㅇ로 123 2층</address>
+            <span class="rep">대표 : 구은지</span>
+            <span class="tel">전화 : 032-123-456</span>
+            <span class="">사업자등록번호 : 123-45-678910</span>
+            <p class="copyright">Copyright © 2022 떡볶이 찾아 삼만리. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- // footer -->
+        
+    <!-- Java Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
