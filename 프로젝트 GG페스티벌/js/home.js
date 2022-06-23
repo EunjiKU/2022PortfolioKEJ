@@ -2,20 +2,23 @@ $(function (){
   // AOS Instance
   AOS.init(); 
 
+
   //팝업
-  var popupbtn = document.querySelector('.popupbtn');
   var popupblack = document.querySelector('#popup_sec');
+  var popupbtn = document.querySelector('.popupbtn');
 
   popupbtn.addEventListener('click',function(){
     popupblack.style.display = 'none';
     });
+
 
   //햄버거 버튼
   $('#habbtn').click(function(){
     $(this).toggleClass('hamactive');
     });
 
-  // 언어
+
+  // 언어 - 한국어 & 영어
   var language = document.querySelectorAll('#language li a');
   for(var i = 0 ; language.length > i ; i++){
     language[i].addEventListener('click',function(e){
@@ -25,16 +28,16 @@ $(function (){
     }
     });
   }
-  // 언어
+
+
+  // 언어 - arrow
   $('#langbtn').click(function(){
     $("#langbtn i").toggleClass('arrowrotate');
-  });
-  $('#langbtn').click(function(){
     $(".delangpops").toggleClass('lactive');
-  });
-  $('#langbtn').click(function(){
     $(".delangpop").toggleClass('lactive');
   });
+
+
 
   //헤더 스크롤 효과
   $(document).on('scroll', function(){
@@ -47,14 +50,15 @@ $(function (){
     }
   })
 
+
   //반응형 PC 헤더
-  $('#mainmenu').mouseover(function(){
+  $('#p-nav #mainmenu').mouseover(function(){
     $('#header').addClass("heademouse");
     $('.hr').addClass("headhr");
     $('#header').removeClass("deheademouse");
     $('.hr').removeClass("deheadhr");
   });
-  $('#mainmenu').mouseleave(function(){
+  $('#p-nav #mainmenu').mouseleave(function(){
     $('#header').addClass("deheademouse");
     $('.hr').addClass("deheadhr");
     $('#header').removeClass("heademouse");
@@ -69,22 +73,24 @@ $(function (){
   });
 
 
-  $(window).resize(function (){  
-    if (window.innerWidth <= 1024) {
-      // //반응형 MOBILE 헤더
+// //반응형 MOBILE 헤더
       $("#habbtn").click(function(){
-        $(".menuboxs").toggleClass('menuactive');
+        $(".m").toggleClass('menuactive');
         $(".menublack").toggleClass('blactive');
       });
-      $("#mainmenu > li").click(function(){
-        $('.submenu').stop().slideUp(400);
+      $("#m-nav #mainmenu > li").click(function(){
+        $('#m-nav .submenu').stop().slideUp(400);
         $(this).children(".submenu").stop().slideToggle(400);
       })
-    }
-  })
+
+  //   $(window).resize(function (){  
+  //     if (window.innerWidth <= 1024) {
+  //     }
+  // });
+
 
   // 메인 슬라이드
-  var swiper = new Swiper(".mainslide", {
+  var swiper1 = new Swiper(".mainslide", {
     slidesPerView:1,
       loop: true,
       pagination: {
@@ -100,10 +106,11 @@ $(function (){
     },
   });
 
-  // 이벤트 슬라이드
-  var swiper = new Swiper(".eventslide", {
+
+  // 게임 슬라이드
+  var swiper2 = new Swiper(".guideslide", {
     slidesPerView: 2,
-    spaceBetween: 30,
+    spaceBetween: 14,
     slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
@@ -112,46 +119,68 @@ $(function (){
       prevEl: ".swiper-button-prev",
     },
     breakpoints: { //반응형 조건 속성
-      768: {
+      769: {
         spaceBetween: 30,
+        slidesPerView: 3,
       },
-      1024: {
+      1025: {
         spaceBetween: 60,
-      },
-      1300: {
-        spaceBetween: 60,
-
+        slidesPerView: 3,
       }
     }
   });
 
-  // 파트너 슬라이드
-  var swiper = new Swiper(".partnerslide", {
+
+  // 이벤트 슬라이드
+  var swiper3 = new Swiper(".eventslide", {
     slidesPerView: 2,
+    spaceBetween: 14,
     slidesPerGroup: 1,
-    spaceBetween:60,
-    autoplay: {
-      delay: 2500,
-    },
     loop: true,
     loopFillGroupWithBlank: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
-    },breakpoints: { //반응형 조건 속성
-      768: {
-        slidesPerView: 3,
+    },
+    breakpoints: { //반응형 조건 속성
+      769: {
+        spaceBetween: 30,
       },
-      1024: {
-        slidesPerView: 4,
-      },
-      1300: {
-        slidesPerView: 5,
+      1025: {
+        spaceBetween: 60,
       }
     }
   });
 
-  // 탭스
+
+  // 파트너 슬라이드
+  var swiper4 = new Swiper(".partnerslide", {
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    spaceBetween:14,
+    autoplay: {
+      delay: 2500,
+    },
+    loop: true,
+    loopFillGroupWithBlank: true,
+    breakpoints: { //반응형 조건 속성
+      769: {
+        slidesPerView: 3,
+        spaceBetween:60,
+      },
+      1025: {
+        slidesPerView: 4,
+        spaceBetween:60,
+      },
+      1300: {
+        slidesPerView: 5,
+        spaceBetween:60,
+      }
+    }
+  });
+
+
+  // tab
   var targetLink = document.querySelectorAll('.tab-menu a');
   var tabContent = document.querySelectorAll('#tab-content > div');
   for(var i = 0; i < targetLink.length; i++){
@@ -169,6 +198,8 @@ $(function (){
       }
     });
   }
-  document.getElementById('tabs-1').style.display = 'block';
-
+  for(var j = 0; j < tabContent.length; j++){
+    tabContent[j].style.display='none';
+    document.getElementById('tabs-1').style.display = 'block';
+  }
 });

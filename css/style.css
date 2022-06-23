@@ -123,6 +123,8 @@
 /* btn 공통영역 */
 .proje_btn {
     display: inline-block;
+}
+.proje_btn.git_btn {
     margin-left: 10px;
 }
 .cont_btn .btn_text {
@@ -131,7 +133,8 @@
 
 .btn {
     position: relative;
-    width: 230px;
+    /* width: 230px; */
+    width: 204px;
     height: 60px;
     font-size: 0;
     line-height: 0;
@@ -179,6 +182,7 @@ html {
 
 /* body */
 body {
+    width: 100%;
     overflow-x: hidden;
 }
 body::-webkit-scrollbar {
@@ -493,15 +497,13 @@ header h1 span {
 .skill_sec .skill_wrap {
     width: 68%;
     display: flex;
+    align-items: flex-end;
     justify-content: space-between;
     margin-top: 30px;
 }
 
 .skill_sec .skill_wrap .skill_img {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 46%;
+    width: 40%;
 }
 .skill_sec .skill_wrap .skill_img img {
     width: 100%;
@@ -510,26 +512,31 @@ header h1 span {
 .skill_sec .skill_wrap .skill_list {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    width: 50%;
-    margin-bottom: 20px;
+    justify-content: center;
+    width: 60%;
+    /* margin-bottom: 20px; */
 }
 .skill_sec .skill_wrap .skill_list > li{
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+.skill_sec .skill_wrap .skill_list > li:nth-child(2){
 }
 .skill_sec .skill_wrap .skill_list > li p {
     position: relative;
     width: 190px;
     height: 190px;
-    margin-top: -20px;
-    margin-right: 40px;
+    margin-left: 8%;
+    margin-right: 8%;
     line-height: 190px;
+    margin-top: -24px;
     text-align: center;
     font-size: 20px;
     color: var(--color-black);
     border-radius: 100%;
     background-color: #fff;
+    flex-shrink: 0;
 }
 .skill_sec .skill_wrap  .skill_list > li p.skill{
 }
@@ -576,11 +583,14 @@ header h1 span {
     }
 }
 .skill_sec .skill_wrap .skill_list > li > ul {
-    margin-top: -20px;
+    margin-top: -24px;
+    flex-grow: 1;
+
 }
 .skill_sec .skill_wrap .skill_list > li > ul > li {
-    font-size: 24px;
+    font-size: 2vw;
     font-weight: 600;
+    letter-spacing: -2px;
     color: var(--color-black);
 }
 
@@ -591,6 +601,7 @@ header h1 span {
     padding: 200px 0 500px;
     color: #fff;
     background-color: var(--color-black);
+    overflow: hidden;
 }
 .prointro_sec svg {
     position: absolute;
@@ -629,6 +640,7 @@ header h1 span {
 
 /* proje section5 */
 .proje_sec1 {
+    padding: 0 0 0 8%;
 }
 
 .proje_sec1 .index {
@@ -655,82 +667,99 @@ header h1 span {
 }
 
 .proje_sec1 .project {
-    padding: 160px 8% 100px;
+    display: flex;
 }
-.proje_sec1 .project::after{
-    content: '';
-    clear: both;
-    display: block;
+.proje_sec1 .project .proje1_info {
+    /* padding: 160px 0 100px; */
+    padding: 100px 0 100px;
+    width: 46%;
 }
-.proje_sec1 .pro_left {
-    width: 44%;
-}
-.proje_sec1 .pro_right {
-    width: 44%;
-    float: right;
+.proje_sec1 .project .proje1_img {
+    width: 54%;
 }
 
-.proje_sec1 .proje1_info h4{
+.proje_sec1 .project .proje1_info h4{
     font-size: 50px;
     color: var(--color-black);
     font-weight: 900;
     margin-bottom: 60px;
 }
-.proje_sec1 .proje1_info .over_box {
+.proje_sec1 .project .proje1_info .over_box {
     margin-bottom: 30px;
 }
-.proje_sec1 .proje1_info .title {
+.proje_sec1 .project .proje1_info .title {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 4px;
     color: var(--color-black);
 }
-.proje_sec1 .proje1_info .text {
+.proje_sec1 .project .proje1_info .text {
     font-size: 16px;
     line-height: 1.4;
     color: var(--color-lightblack);
 }
-.proje_sec1 .proje1_info .about_box {
+.proje_sec1 .project .proje1_info .about_box {
     margin-bottom: 50px;
 }
-.proje_sec1 .proje1_info .about_box dl{
+.proje_sec1 .project .proje1_info .about_box dl{
     line-height: 1.6;
 }
-.proje_sec1 .proje1_info .about_box dl::after {
+.proje_sec1 .project .proje1_info .about_box dl::after {
     content: '';
     clear: both;
     display: block;
 }
-.proje_sec1 .proje1_info .about_box dl dt{
+.proje_sec1 .project .proje1_info .about_box dl dt{
     float: left;
     width: 70px;
     font-weight: 500;
 }
-.proje_sec1 .proje1_info .about_box dl dd{
+.proje_sec1 .project .proje1_info .about_box dl dd{
 }
 
-.proje_sec1 .project1 {
-    background: url('../img/bg-project1.png') no-repeat 80% bottom / 40%;
+.proje_sec1 .project .proje1_img {
+    position: relative;
+    overflow: hidden;
 }
-.proje_sec1 .project2 {
-    color: #fff;
-    background: url('../img/bg-project2.png') no-repeat 10% 70% / 46%;
+.proje_sec1 .project .proje1_img img{
+    position: absolute;
 }
-.proje_sec1 .project3 {
-    color: #fff;
-    background: url('../img/bg-project3.png') no-repeat center right / contain;
+.proje_sec1 .project1 .proje1_img img {
+    width: 82%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20%;
 }
-.proje_sec1 .project4 {
-    background: url('../img/bg-project4.png') no-repeat 13% center / contain;
+.proje_sec1 .project2 .proje1_img img {
+    width: 90%;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
 }
-.proje_sec1 .project5 {
-    color: #fff;
-    background: url('../img/bg-project5.png') no-repeat right bottom / 44%;
+.proje_sec1 .project3 .proje1_img img {
+    width: 70%;
+    right: 14%;
+    top: 50%;
+    transform: translateY(-50%);
 }
-.proje_sec1 .project6 {
-    color: #fff;
-    background: url('../img/bg-project6.png') no-repeat 10% center / 48%;
+.proje_sec1 .project4 .proje1_img img {
+    width: 80%;
+    right: 18%;
+    top: calc(50% + 12%);
+    transform: translateY(-50%);
 }
+.proje_sec1 .project5 .proje1_img img {
+    width: 90%;
+    right: 0;
+    top: calc(50% - 24%);
+}
+.proje_sec1 .project6 .proje1_img img {
+    width: 110%;
+    right: -20%;
+    top: calc(50% + 20%);
+    transform: translateY(-50%);
+}
+
 .proje_sec1 .project1 .title {
     color: #FF0000;
 }
@@ -882,16 +911,17 @@ header h1 span {
 
 .contact_sec .wrap {
     display: flex;
+    justify-content: space-between;
 }
 
 .contact_sec .left_wrap {
     position: relative;
-    width: 54%;
-    height: 740px;
+    width: 50%;
+    /* height: 740px; */
     overflow: hidden;
+
 }
 .contact_sec .left_wrap img {
-    width: 100%;
     animation: skewAni 3s infinite;
 }
 .contact_sec .left_wrap .talk_img {
@@ -900,21 +930,24 @@ header h1 span {
     animation: talkAni 3s infinite ease-in-out;
 }
 .contact_sec .left_wrap .talk_img.talk1 {
-    left: 14%;
-    top: 24%;
+    left: 12%;
+    bottom: 26vw;
+    transform: rotate(-16deg);
 }
 .contact_sec .left_wrap .talk_img.talk2 {
-    left: 40%;
-    top: 8%;
+    left: 35%;
+    bottom: 34vw;
+    transform: rotate(-10deg);
 }
 .contact_sec .left_wrap .talk_img.talk3 {
     right: 0;
-    top: 14%;
+    bottom: 32vw;
+    transform: rotate(10deg);
 }
 .contact_sec .left_wrap .run_img {
     position: absolute;
     bottom: 0;
-    width: 90%;
+    width: 100%;
 }
 @keyframes skewAni {
     0% {
@@ -944,13 +977,16 @@ header h1 span {
 
 .contact_sec .right_wrap {
     width: 46%;
-    margin-top: 340px;
+    /* margin: 280px 0 60px; */
+    margin: 20vw 0 60px;
 }
 .contact_sec .right_wrap h3{
+    position: relative;
     color: var(--color-black);
     font-size: 40px;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 50px;
+    -webkit-text-stroke: 1px #fff;
 }
 
 .contact_sec .right_wrap .cont_name,
@@ -1010,6 +1046,14 @@ header h1 span {
 
 /* ---   query TABLET --- */
 @media (max-width : 1024px) {
+    /* btn 공통영역 */
+    .proje_btn {
+        display: inline-block;
+    }
+    .proje_btn.git_btn {
+        margin-left: 0px;
+    }
+
     /* header */
     header h1 {
         font-size: 54px;
@@ -1045,7 +1089,7 @@ header h1 span {
     }
 
     .about_sec .bottom_wrap {
-        padding: 100px 4% 120px;
+        padding: 100px 4% 80px;
     }
     .about_sec .bottom_wrap .history_list {
         display: flex;
@@ -1072,23 +1116,28 @@ header h1 span {
 
     .skill_sec .skill_wrap {
         width: 100%;
+        margin-top: 50px;
     }
 
-    .skill_sec .skill_img {
+    .skill_sec .skill_wrap .skill_img  {
         width: 36%;
     }
 
-    .skill_sec .skill_list {
+    .skill_sec .skill_wrap .skill_list {
         width: 64%;
     }
     .skill_sec .skill_wrap .skill_list > li p {
-        width: 140px;
-        height: 140px;
+        width: 170px;
+        height: 170px;
         margin-top: -20px;
-        line-height: 140px;
+        margin-right: 6%;
+        line-height: 170px;
+    }
+    .skill_sec .skill_wrap .skill_list > li > ul {
+        margin-top: -20px;    
     }
     .skill_sec .skill_wrap .skill_list > li > ul > li {
-        font-size: 20px;
+        font-size: 3.4vw;
     }
 
 
@@ -1130,6 +1179,9 @@ header h1 span {
 
 /* --- media query MOBILE--- */
 @media (max-width : 768px) {
+    body {
+        width: 100%;
+    }
     /* header */
     header h1 {
         font-size: 50px;
@@ -1180,27 +1232,35 @@ header h1 span {
 
     /* skill section3 */
     .skill_sec .skill_wrap {
-        flex-direction: column;
-        align-items: center;
     }
     .skill_sec .skill_wrap .skill_img {
-        width: 40%;
+        display: none;
     }
 
     .skill_sec .skill_wrap .skill_list {
         margin-top: 40px;
         width: 100%;
     }
+    .skill_sec .skill_wrap .skill_list > li > ul > li {
+        font-size: 4.4vw;
+    }
 
 
     /* proje section5 */
-    .proje_sec1 .pro_left {
+    .proje_sec1 {
+        padding: 0 4% 0 4%;
+    }
+    .proje_sec1 .project {
+        flex-direction: column;
+    }
+    .proje_sec1 .project .proje1_info 
+    {
         width: 100%;
     }
-    .proje_sec1 .pro_right {
+    .proje_sec1 .project .proje1_img {
         width: 100%;
-        float: none;
     }
+    
 
 
     /* contact section7 */
@@ -1217,6 +1277,6 @@ header h1 span {
         width: 100%;
     }
     .contact_sec .right_wrap h3{
-        color: #fff;
+        color: var(--color-black)f;
     }
 }

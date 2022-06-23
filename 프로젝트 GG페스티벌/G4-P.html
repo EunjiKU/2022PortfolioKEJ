@@ -2,6 +2,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GGFESTIVAL</title>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/2d323a629b.js" crossorigin="anonymous"></script>
@@ -9,70 +11,124 @@
     <link href="./css/reset.css" rel="stylesheet" type="text/css" />
     <link href="./css/temp.css" rel="stylesheet" type="text/css" />
     <link href="./css/G4-N.css" rel="stylesheet" type="text/css" />
+    <!-- aos livery -->
+    <link href="./css/aos.css" rel="stylesheet" type="text/css" />
+    <!-- swiper livery -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 
 <body>
 <!-- 헤더 영역 -->
 <header id="header">
     <div class="hr">
-    <nav id="nav" class="wrap">
-        <h1 id="logo"><a href="./home.html"><img src="./img/로고1.png" alt="로고1"/></a></h1>
-        <div id="habbtn">
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-        </div>
-        <span class="menuboxs menuactive" data-aos="zoom-in">
-            <ul id="mainmenu">
-                <li><a href="./G1-I.html">GG</a>
-                    <ul class="submenu mactive">
-                        <li><a href="./G1-I.html">GG 소개</a></li>
-                        <li><a href="./G1-H.html">행사연혁</a></li>
-                        <li><a href="./G1-F.html">시설안내</a></li>
-                        <li><a href="./G1-T.html">교통안내</a></li>
-                    </ul>
-                </li>
-                <li><a href="./G2-G.html">참가안내</a>
-                    <ul class="submenu mactive">
-                        <li><a href="./G2-G.html">참가게임작</a></li>
-                        <li><a href="./G2-G.html">참가사</a></li>
-                        <li><a href="./G2-G.html">참가 부스</a></li>
-                        <li><a href="./G2-G.html">참가 출품작</a></li>
-                    </ul></li>
-                <li><a href="./G3-D.html">참가신청</a>
-                    <ul class="submenu mactive">
-                        <li><a href="./G3-D.html">개발사 신청</a></li>
-                        <li><a href="./G3-B.html">바이어 신청</a></li>
-                        <li><a href="./G3-P.html">부스 신청</a></li>
-                        <li><a href="./G3-E.html">게임 투고</a></li>
-                        <li><a href="./G3-R.html">참관객 사전등록</a></li>
-                        <li><a href="./G3-C.html">참가 확인</a></li>
-                    </ul></li>
-                <li><a href="./G4-N.html">뉴스</a>
-                    <ul class="submenu mactive">
-                        <li><a href="./G4-N.html">공지사항</a></li>
-                        <li><a href="./G4-P.html">보도자료</a></li>
-                        <li><a href="./G4-E.html">이벤트</a></li>
-                        <li><a href="./G4-S.html">고객센터</a></li>
-                    </ul></li>
-            </ul>
-            <ul id="util">
-                <li><a href="./L.html">LOGIN</a></li>
-                <li><a href="./M.html">MYPAGE</a></li>
-                <li id="langbtn"><a>LANGUAGE <span><i class="fas fa-chevron-up arrowrotate"></i></span></a>
-                <!-- 팝업창 영역 -->
-                    <ul id="language" class="lactive delangpop">
-                        <li><a class="llactive">한국어</a></li>
-                        <li><a>English</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </span>
-    </nav>
+        <nav id="p-nav" class="wrap">
+            <h1 id="logo"><a href="./home.html"><img src="./img/로고1.png" alt="GGFESTIVAL로고"/></a></h1>
+            <span class="menuboxs menuactive">
+                <ul id="mainmenu">
+                    <li><a href="./G1-I.html">GG</a>
+                        <ul class="submenu mactive">
+                            <li><a href="./G1-I.html">GG 소개</a></li>
+                            <li><a href="./G1-H.html">행사연혁</a></li>
+                            <li><a href="./G1-F.html">시설안내</a></li>
+                            <li><a href="./G1-T.html">교통안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./G2-G.html">참가안내</a>
+                        <ul class="submenu mactive">
+                            <li><a href="./G2-G.html">참가게임작</a></li>
+                            <li><a href="./G2-G.html">참가사</a></li>
+                            <li><a href="./G2-G.html">참가 부스</a></li>
+                            <li><a href="./G2-G.html">참가 출품작</a></li>
+                        </ul></li>
+                    <li><a href="./G3-D.html">참가신청</a>
+                        <ul class="submenu mactive">
+                            <li><a href="./G3-D.html">개발사 신청</a></li>
+                            <li><a href="./G3-B.html">바이어 신청</a></li>
+                            <li><a href="./G3-P.html">부스 신청</a></li>
+                            <li><a href="./G3-E.html">게임 투고</a></li>
+                            <li><a href="./G3-R.html">참관객 사전등록</a></li>
+                            <li><a href="./G3-C.html">참가 확인</a></li>
+                        </ul></li>
+                    <li><a href="./G4-N.html">뉴스</a>
+                        <ul class="submenu mactive">
+                            <li><a href="./G4-N.html">공지사항</a></li>
+                            <li><a href="./G4-P.html">보도자료</a></li>
+                            <li><a href="./G4-E.html">이벤트</a></li>
+                            <li><a href="./G4-S.html">고객센터</a></li>
+                        </ul></li>
+                </ul>
+                <ul id="util">
+                    <li><a href="./L.html">LOGIN</a></li>
+                    <li><a href="./M.html">MYPAGE</a></li>
+                    <li id="langbtn"><a>LANGUAGE <span><i class="fas fa-chevron-up arrowrotate"></i></span></a>
+                    <!-- 언어 팝업창 영역 -->
+                        <ul id="language" class="lactive delangpop">
+                            <li><a class="llactive">한국어</a></li>
+                            <li><a>English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </span>
+        </nav>
+        <nav id="m-nav" class="wrap">
+            <h1 id="logo"><a href="./home.html"><img src="./img/로고1.png" alt="GGFESTIVAL로고"/></a></h1>
+            <div id="habbtn">
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+            </div>
+            <div class="m">
+                <ul id="util">
+                    <li><a href="./L.html">LOGIN</a></li>
+                    <li><a href="./M.html">MYPAGE</a></li>
+                    <li id="langbtn"><a>LANGUAGE <span><i class="fas fa-chevron-up arrowrotate"></i></span></a>
+                    <!-- 언어 팝업창 -->
+                        <ul id="language" class="lactive delangpop">
+                            <li><a class="llactive">한국어</a></li>
+                            <li><a>English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id="mainmenu">
+                    <li><a href="./G1-I.html">GG</a>
+                        <ul class="submenu mactive">
+                            <li><a href="./G1-I.html">GG 소개</a></li>
+                            <li><a href="./G1-H.html">행사연혁</a></li>
+                            <li><a href="./G1-F.html">시설안내</a></li>
+                            <li><a href="./G1-T.html">교통안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./G2-G.html">참가안내</a>
+                        <ul class="submenu mactive">
+                            <li><a href="./G2-G.html">참가게임작</a></li>
+                            <li><a href="./G2-G.html">참가사</a></li>
+                            <li><a href="./G2-G.html">참가 부스</a></li>
+                            <li><a href="./G2-G.html">참가 출품작</a></li>
+                        </ul></li>
+                    <li><a href="./G3-D.html">참가신청</a>
+                        <ul class="submenu mactive">
+                            <li><a href="./G3-D.html">개발사 신청</a></li>
+                            <li><a href="./G3-B.html">바이어 신청</a></li>
+                            <li><a href="./G3-P.html">부스 신청</a></li>
+                            <li><a href="./G3-E.html">게임 투고</a></li>
+                            <li><a href="./G3-R.html">참관객 사전등록</a></li>
+                            <li><a href="./G3-C.html">참가 확인</a></li>
+                        </ul></li>
+                    <li><a href="./G4-N.html">뉴스</a>
+                        <ul class="submenu mactive">
+                            <li><a href="./G4-N.html">공지사항</a></li>
+                            <li><a href="./G4-P.html">보도자료</a></li>
+                            <li><a href="./G4-E.html">이벤트</a></li>
+                            <li><a href="./G4-S.html">고객센터</a></li>
+                        </ul></li>
+                </ul>
+            </div>
+        </nav>
     </div>
 </header>
 <span class="menublack blactive"></span>
+
 <!-- 팝업창 영역 -->
 <ul id="language" class="lactive delangpops">
     <li><a href="#" class="llactive">한국어</a></li>
