@@ -78,6 +78,17 @@ const peopleImgWrap = document.querySelector('.peopleimg_wrap');
 const aboutSec = document.querySelector('.about_sec');
 const blackBox = document.querySelector('.black_box');
 
+const prointroSec = document.querySelector('.prointro_sec');
+const prointroList = document.querySelector('.prointro_list');
+
+const projeSec = document.querySelector('.proje_sec1');
+const projects = document.querySelectorAll('.project');
+const index = document.querySelector('.index');
+const indexLists = document.querySelectorAll('.index li');
+const siv = document.querySelector('.siv');
+
+const projeSec2 = document.querySelector('.proje_sec2');
+
 const contactSec = document.querySelector('.contact_sec');
 
 
@@ -121,23 +132,14 @@ window.addEventListener('scroll', () => {
 
 
     // proitro section4
-    const prointroSec = document.querySelector('.prointro_sec');
-    const prointroList = document.querySelector('.prointro_list');
-
     let prointro_position = prointroSec.getBoundingClientRect().top;
 
     if(prointro_position < 400){
         prointroList.style.left = (prointro_position + 200)/4 + "%";
     }
 
+    
     // contact section5 - index
-    const projeSec = document.querySelector('.proje_sec1');
-    const projeSec2 = document.querySelector('.proje_sec2');
-    const projects = document.querySelectorAll('.project');
-    const index = document.querySelector('.index');
-    const siv = document.querySelector('.siv');
-    const indexLists = document.querySelectorAll('.index li');
-
     let proje_offset = projeSec.offsetTop;
     let proje_bottom = projeSec.getBoundingClientRect().bottom;
     let proje2_offset = projeSec2.offsetTop;

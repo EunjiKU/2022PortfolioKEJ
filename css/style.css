@@ -1044,7 +1044,7 @@ header h1 span {
 /* ------------------------------------------------------------------- */
 
 
-/* ---   query TABLET --- */
+/* ---  query TABLET --- */
 @media (max-width : 1024px) {
     /* btn 공통영역 */
     .proje_btn {
@@ -1190,6 +1190,22 @@ header h1 span {
         top: 56vh;
         font-size: 18px;
     }
+    header .circle {
+        left: 10px;
+        top: 10px;
+        width: 100px;
+        height: 100px;
+    }
+    header .circle p {
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+    }
+    header .circle p span{
+        position: absolute;
+        left: 50%;
+        transform-origin: 0 50px;
+    }
 
 
     /* main section1 */
@@ -1200,6 +1216,11 @@ header h1 span {
         width: 20%;
         left: 10%;
     }
+    /* .main_sec .peopleimg_wrap {
+        top: 60vh;
+        width: 64%;
+        left: 40%;
+    } */
     .main_sec .peopleimg_wrap .people_img {
 
     }
