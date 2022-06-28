@@ -59,19 +59,6 @@ text.innerHTML = text.innerText.split("").map(
 ).join("");
 
 
-// main section1 - code cursor
-// const mainSec = document.querySelector('.main_sec');
-// const cursorCode = document.querySelector('.code_cursor');
-
-// mainSec.addEventListener('mousemove', (e) => {
-//     let x = e.clientX;
-//     let y = e.clientY;
-
-//     cursorCode.style.left = x + "px";
-//     cursorCode.style.top = y + "px";
-// });
-
-
 // scroll
 const peopleImgWrap = document.querySelector('.peopleimg_wrap');
 
@@ -95,7 +82,7 @@ const contactSec = document.querySelector('.contact_sec');
 window.addEventListener('scroll', () => {
     let window_height = window.innerHeight;
     let window_scroll = window.scrollY;
-    
+
 
     // header - circle scroll
     circle.style.transform = "rotate(" + window_scroll / 4 + "deg)";
@@ -103,30 +90,30 @@ window.addEventListener('scroll', () => {
 
     // about section2 - img
     let about_position = aboutSec.getBoundingClientRect().top;
-    
-    if(about_position < 400){
+
+    if (about_position < 400) {
         peopleImgWrap.classList.add('active');
-    }else {
+    } else {
         peopleImgWrap.classList.remove('active');
     }
-    
+
 
     // about section2 - blackBox
+    // top 현재 위치 기준높이
     let bottomWrap_position = bottomWrap.getBoundingClientRect().top;
+    let bottomWrapHeight = bottomWrap.getBoundingClientRect().height;
+    // offset 전체 높이 기준 위치
     let bottomWrap_offset = bottomWrap.offsetTop;
-    
-    if(bottomWrap_position < 700){
+
+    if (bottomWrap_position < bottomWrap_offset - bottomWrapHeight) {
         blackBox.style.height = (window_scroll + window_height - bottomWrap_offset) - 100 + "px";
-    }else {
+    } else {
         blackBox.style.height = 0;
     }
-        // if(bottomWrap_position < 500){
-        //     blackBox.style.height = Math.abs(about_position) * 2 + "px";
-        // }
 
-    if(bottomWrap_position < 100){
+    if (bottomWrap_position < 100) {
         peopleImgWrap.classList.add('active2');
-    }else {
+    } else {
         peopleImgWrap.classList.remove('active2');
     }
 
@@ -134,24 +121,24 @@ window.addEventListener('scroll', () => {
     // proitro section4
     let prointro_position = prointroSec.getBoundingClientRect().top;
 
-    if(prointro_position < 400){
-        prointroList.style.left = (prointro_position + 200)/4 + "%";
+    if (prointro_position < 400) {
+        prointroList.style.left = (prointro_position + 200) / 4 + "%";
     }
 
-    
+
     // contact section5 - index
     let proje_offset = projeSec.offsetTop;
     let proje_bottom = projeSec.getBoundingClientRect().bottom;
     let proje2_offset = projeSec2.offsetTop;
 
-    if(window_scroll + window_height > proje_offset + 200 && proje_bottom - window_height > 0){
+    if (window_scroll + window_height > proje_offset + 200 && proje_bottom - window_height > 0) {
         index.classList.add('active');
-    }else {
+    } else {
         index.classList.remove('active');
     }
 
     projects.forEach((pro, idx) => {
-        if(pro.offsetTop + 100 < window_scroll + window_height){
+        if (pro.offsetTop + 100 < window_scroll + window_height) {
             let idx = pro.getAttribute('data-num');
 
             indexLists.forEach(list => {
@@ -165,8 +152,8 @@ window.addEventListener('scroll', () => {
     // contact section7 - black gradation
     let contact_position = contactSec.getBoundingClientRect().top;
     let contact_offset = contactSec.offsetTop;
-    
-    if(window_scroll + window_height > contact_offset){
+
+    if (window_scroll + window_height > contact_offset) {
         contactSec.style.height = (window_scroll + window_height) - contact_offset + "px";
     }
 
@@ -185,36 +172,36 @@ window.addEventListener('scroll', () => {
     const path5Length = path5.getTotalLength();
     const path6Length = path6.getTotalLength();
 
-        // path2.style.strokeDasharray  = path2Length;
-        // path2.style.strokeDashoffset  = path2Length;
+    // path2.style.strokeDasharray  = path2Length;
+    // path2.style.strokeDashoffset  = path2Length;
 
-        // path3.style.strokeDasharray  = path3Length;
-        // path3.style.strokeDashoffset  = path3Length;
+    // path3.style.strokeDasharray  = path3Length;
+    // path3.style.strokeDashoffset  = path3Length;
 
-        // path4.style.strokeDasharray  = path4Length;
-        // path4.style.strokeDashoffset  = path4Length;
+    // path4.style.strokeDasharray  = path4Length;
+    // path4.style.strokeDashoffset  = path4Length;
 
-        // path5.style.strokeDasharray  = path5Length;
-        // path5.style.strokeDashoffset  = path5Length;
+    // path5.style.strokeDasharray  = path5Length;
+    // path5.style.strokeDashoffset  = path5Length;
 
-        // path6.style.strokeDasharray  = path6Length;
-        // path6.style.strokeDashoffset  = path6Length;
+    // path6.style.strokeDasharray  = path6Length;
+    // path6.style.strokeDashoffset  = path6Length;
 
-        // function calcDashoffset(scrollY, element, length) {
-        //     const ratio = (scrollY - element.offsetTop) / element.offsetHeight
-        //     const value = length - (length * ratio)
-        //     return value < 0 ? 0 : value > length ? length : value
-        // }
+    // function calcDashoffset(scrollY, element, length) {
+    //     const ratio = (scrollY - element.offsetTop) / element.offsetHeight
+    //     const value = length - (length * ratio)
+    //     return value < 0 ? 0 : value > length ? length : value
+    // }
 
-        // const scrollY = window.scrollY + (window.innerHeight / 2);
+    // const scrollY = window.scrollY + (window.innerHeight / 2);
 
-        // path2.style.strokeDashoffset = calcDashoffset(scrollY, aboutSec, path2Length); 
-        // path3.style.strokeDashoffset = calcDashoffset(scrollY, skillSec, path3Length); 
-        // path4.style.strokeDashoffset = calcDashoffset(scrollY, prointroSec, path4Length);
-        // path5.style.strokeDashoffset = calcDashoffset(scrollY, projeSec2, path5Length);
-        // path6.style.strokeDashoffset = calcDashoffset(scrollY, contactSec, path6Length);
+    // path2.style.strokeDashoffset = calcDashoffset(scrollY, aboutSec, path2Length); 
+    // path3.style.strokeDashoffset = calcDashoffset(scrollY, skillSec, path3Length); 
+    // path4.style.strokeDashoffset = calcDashoffset(scrollY, prointroSec, path4Length);
+    // path5.style.strokeDashoffset = calcDashoffset(scrollY, projeSec2, path5Length);
+    // path6.style.strokeDashoffset = calcDashoffset(scrollY, contactSec, path6Length);
 
-        // console.log(path4);
+    // console.log(path4);
 });
 
 
@@ -236,9 +223,9 @@ modals.forEach((modal) => {
         let modal_data = modal.getAttribute('data-img');
         let modal_href = modal.getAttribute('href')
 
-        if(modal_data == 'jpg'){
+        if (modal_data == 'jpg') {
             modalWrap.innerHTML = `<img src="${modal_href}" alt="">`;
-        }else{
+        } else {
             modalWrap.innerHTML = `<video src="${modal_href}" autoplay loop muted poster="./img/loading.gif"></video>`
         }
     });
@@ -282,11 +269,11 @@ AOS.init();
 // 
 const bottomTit = document.querySelector('.bottom_tit');
 
-function mobiletitFunc(){
-    if(window.innerWidth < 769){
+function mobiletitFunc() {
+    if (window.innerWidth < 769) {
         bottomTit.innerHTML = '<h3 class="bottom_tit">저의 커리어를</br>보여드릴게요.</h3>'
-    }else {
-        bottomTit.innerHTML = '<h3 class="bottom_tit">저의 커리어를 보여드릴게요.</h3>' 
+    } else {
+        bottomTit.innerHTML = '<h3 class="bottom_tit">저의 커리어를 보여드릴게요.</h3>'
     }
 }
 
