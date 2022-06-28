@@ -23,101 +23,6 @@
 
 
 /* cursor */
-.cursor {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 50px;
-    height: 50px;
-    border: 1px solid var(--color-black);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: .1s;
-}
-.cursor2 {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 8px;
-    height: 8px;
-    border: 1px solid var(--color-black);
-    background-color: var(--color-black);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: .15s;
-}
-
-/* .main_sec:hover ~ .cursor{
-    opacity: 0;
-}
-.main_sec:hover ~ .cursor2{
-    opacity: 0;
-} */
-
-.prointro_sec:hover ~ .cursor{
-    border: none;
-    z-index: 9;
-}
-.prointro_sec:hover ~ .cursor::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: inline-block;
-    width: 88px;
-    height: 128px;
-    background: url('../img/arrow1.png') no-repeat center center / cover;
-    transform: translate(-50%, -50%);
-}
-.prointro_sec:hover ~ .cursor2{
-    opacity: 0;
-}
-
-.proje_sec2:hover ~ .cursor::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: inline-block;
-    width: 160px;
-    height: 88px;
-    background: url('../img/arrow2.png') no-repeat center center / cover;
-    transform: translate(-50%, -50%);
-}
-.proje_sec2:hover ~ .cursor2{
-    opacity: 0;
-}
-
-.about_cursor1{
-    border: 1px solid #fff;
-    z-index: 9;
-}
-.about_cursor2{
-    border: 1px solid #fff;
-    background-color: #fff;
-}
-
-.swiper_cursor1 {
-    opacity: .4;
-    transform: translate(-50%, -50%) scale(2);
-    background-color: var(--color-black);
-    border: 1px solid var(--color-black);
-    background: none;
-    transition: all .2s;
-}
-
-.btn_cursor1 {
-    opacity: .4;
-    transform: translate(-50%, -50%) scale(3);
-    background-color: #fff;
-    border: 1px solid #fff;
-    transition: all .2s;
-}
-.btn_cursor2 {
-    opacity: 0;
-}
 
 
 /* btn 공통영역 */
@@ -133,7 +38,6 @@
 
 .btn {
     position: relative;
-    /* width: 230px; */
     width: 204px;
     height: 60px;
     font-size: 0;
@@ -153,10 +57,7 @@
     transform: translate(-50%, -50%);
     transition: all .4s;
 }
-.btn:hover .btn_back{
-    width: 300px;
-    height: 300px;
-}
+
 .btn .btn_text {
     position: absolute;
     left: 50%;
@@ -165,18 +66,6 @@
     color: var(--color-black);
     transform: translate(-50%, -50%);
     z-index: 999;
-}
-.btn:hover .btn_text {
-    color: #fff;
-}
-.btn:hover .btn_text i {
-    color: #fff;
-}
-
-
-/* html */
-html {
-
 }
 
 
@@ -208,7 +97,7 @@ body::-webkit-scrollbar-button {
     width: 100%;
     height: 100%;
     background-color: var(--color-black);
-    z-index: 9999;
+    z-index: 9999999;
 }
 #loading p {
     position: absolute;
@@ -223,13 +112,27 @@ body::-webkit-scrollbar-button {
 header {
 }
 
-
+header .harrow {
+    position: fixed;
+    left: 83px;
+    top: 83px;
+    z-index: 99999;
+    animation: top-bottomAni2 1s infinite ease-in-out alternate;
+}
+@keyframes top-bottomAni2 {
+    from {
+        transform: translatey(0px);
+    }
+    to {
+        transform: translatey(-4px);
+    }
+}
 header .circle {
     position: fixed;
-    left: 2.5rem;
-    top: 2.5rem;
-    width: 7.5rem;
-    height: 7.5rem;
+    left: 40px;
+    top: 40px;
+    width: 110px;
+    height: 110px;
     border-radius: 100%;
     background-color: #EDECE8;
     z-index: 9999;
@@ -237,7 +140,7 @@ header .circle {
 header .circle p {
     width: 100%;
     height: 100%;
-    font-size: 0.875rem;
+    font-size: 12px;
     font-weight: 500;
     /* animation: rotateText 10s linear infinite; */
 }
@@ -252,7 +155,7 @@ header .circle p {
 header .circle p span{
     position: absolute;
     left: 50%;
-    transform-origin: 0 3.75rem;
+    transform-origin: 0 55px;
 }
 
 header h1 {
@@ -821,14 +724,7 @@ header h1 span {
 .proje_sec2 .mySwiper .swiper-wrapper .swiper-slide {
     transition: all .4s;
 }
-.proje_sec2 .mySwiper .swiper-wrapper .swiper-slide:hover {
-    background-color: #fff;
-    transform: scale(1.2);
-    z-index: 9;
-}
-.proje_sec2 .mySwiper .swiper-wrapper .swiper-slide:hover a .proje_img img {
-    transform: scale(1.1);
-}
+
 .proje_sec2 .mySwiper .swiper-wrapper .swiper-slide a .proje_img {
     overflow: hidden;
 }
@@ -836,14 +732,8 @@ header h1 span {
     width: 100%;
     transition: all .4s;
 }
-.proje_sec2 .mySwiper .swiper-wrapper .swiper-slide:hover a .proje_info {
-    margin: 8px 10px 20px;
-}
 .proje_sec2 .mySwiper .swiper-wrapper .swiper-slide a .proje_info p {
     color: #fff;
-}
-.proje_sec2 .mySwiper .swiper-wrapper .swiper-slide:hover a .proje_info p {
-    color: var(--color-black);
 }
 .proje_sec2 .mySwiper .swiper-wrapper .swiper-slide a .proje_info .proje_title {
     font-size: 18px;
@@ -1044,6 +934,130 @@ header h1 span {
 /* ------------------------------------------------------------------- */
 
 
+@media (min-width: 1025px) {
+    /* cursor */
+    .cursor {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        border: 1px solid var(--color-black);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: .1s;
+    }
+    .cursor2 {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 8px;
+        height: 8px;
+        border: 1px solid var(--color-black);
+        background-color: var(--color-black);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: .15s;
+    }
+    
+    .about_cursor1{
+        border: 1px solid #fff;
+        z-index: 9;
+    }
+    .about_cursor2{
+        border: 1px solid #fff;
+        background-color: #fff;
+    }
+    
+    .swiper_cursor1 {
+        opacity: .4;
+        transform: translate(-50%, -50%) scale(2);
+        background-color: var(--color-black);
+        border: 1px solid var(--color-black);
+        background: none;
+        transition: all .2s;
+    }
+    
+    .btn_cursor1 {
+        opacity: .4;
+        transform: translate(-50%, -50%) scale(3);
+        background-color: #fff;
+        border: 1px solid #fff;
+        transition: all .2s;
+    }
+    .btn_cursor2 {
+        opacity: 0;
+    }
+
+    
+    .prointro_sec:hover ~ .cursor{
+        border: none;
+        z-index: 9;
+    }
+    .prointro_sec:hover ~ .cursor::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline-block;
+        width: 88px;
+        height: 128px;
+        background: url('../img/arrow1.png') no-repeat center center / cover;
+        transform: translate(-50%, -50%);
+    }
+    .prointro_sec:hover ~ .cursor2{
+        opacity: 0;
+    }
+    
+    .proje_sec2:hover ~ .cursor::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline-block;
+        width: 160px;
+        height: 88px;
+        background: url('../img/arrow2.png') no-repeat center center / cover;
+        transform: translate(-50%, -50%);
+    }
+    .proje_sec2:hover ~ .cursor2{
+        opacity: 0;
+    }
+
+
+    /* btn 공통영역 */
+    .btn:hover .btn_back{
+        width: 300px;
+        height: 300px;
+    }
+    .btn:hover .btn_text {
+        color: #fff;
+    }
+    .btn:hover .btn_text i {
+        color: #fff;
+    }
+
+
+    /* proje section6 */
+    .proje_sec2 .mySwiper .swiper-wrapper .swiper-slide:hover {
+        background-color: #fff;
+        transform: scale(1.2);
+        z-index: 9;
+    }
+    .proje_sec2 .mySwiper .swiper-wrapper .swiper-slide:hover a .proje_img img {
+        transform: scale(1.1);
+    }
+    .proje_sec2 .mySwiper .swiper-wrapper .swiper-slide:hover a .proje_info {
+        margin: 8px 10px 20px;
+    }
+    .proje_sec2 .mySwiper .swiper-wrapper .swiper-slide:hover a .proje_info p {
+        color: var(--color-black);
+    }
+}
+
+
 /* ---  query TABLET --- */
 @media (max-width : 1024px) {
     /* btn 공통영역 */
@@ -1055,6 +1069,20 @@ header h1 span {
     }
 
     /* header */
+    header .harrow {
+        left: 65px;
+        top: 65px;
+    }
+    header .circle {
+        left: 24px;
+        top: 24px;
+        width: 104px;
+        height: 104px;
+    }
+    header .circle p span{
+        transform-origin: 0 52px;
+    }
+
     header h1 {
         font-size: 54px;
         z-index: 9;
@@ -1113,6 +1141,9 @@ header h1 span {
     .skill_sec .skill_text {
         width: 100%;
     }
+    .skill_sec .skill_text h3 svg {
+        left: 4%;
+    }
 
     .skill_sec .skill_wrap {
         width: 100%;
@@ -1138,6 +1169,37 @@ header h1 span {
     }
     .skill_sec .skill_wrap .skill_list > li > ul > li {
         font-size: 3.4vw;
+    }
+
+    /* proje section5 */
+    .proje_sec1 .project {
+    }
+    .proje_sec1 .project .proje1_img{
+    }
+    .proje_sec1 .index li {
+        font-size: 30px;
+        font-weight: 500;
+        transition: all .4s;
+    }
+    .proje_sec1 .index li.active {
+        -webkit-text-stroke: 2px var(--color-black);
+        color: transparent;
+        font-size: 40px;
+        font-weight: 900;
+    }
+
+
+    /*  */
+    .proje_sec2 h3 {
+        margin-left: 4%;
+    }
+    .proje_sec2 .text {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .proje_sec2 .mySwiper {
+        margin-left: 4%;
+        margin-right: 4%;
     }
 
 
@@ -1179,16 +1241,28 @@ header h1 span {
 
 /* --- media query MOBILE--- */
 @media (max-width : 768px) {
-    body {
-        width: 100%;
+    /* btn 공통영역 */
+    .proje_btn.git_btn {
+        margin-left: 4px;
     }
+    .cont_btn .btn_text {
+        margin-left: -4px;
+    }
+    .btn {
+        width: 160px;
+        height: 60px;
+    }
+    .btn .btn_text {
+        font-size: 16px;
+    }
+
     /* header */
-    header h1 {
-        font-size: 50px;
-    }
-    .main_sec h2 {
-        top: 56vh;
-        font-size: 18px;
+    header .harrow {
+        position: fixed;
+        left: 48px;
+        top: 48px;
+        z-index: 99999;
+        animation: top-bottomAni2 1s infinite ease-in-out alternate;
     }
     header .circle {
         left: 10px;
@@ -1207,35 +1281,63 @@ header h1 span {
         transform-origin: 0 50px;
     }
 
+    header h1 {
+        font-size: 50px;
+        top: 20vh;
+        left: 4%;
+    }
+    .main_sec h2 {
+        left: 4%;
+        top: 46vh;
+        font-size: 18px;
+    }
+
 
     /* main section1 */
     .main_sec {
     }
+
     .main_sec .peopleimg_wrap {
+        position: relative;
         top: 60vh;
-        width: 20%;
+        width: 80%;
         left: 10%;
     }
-    /* .main_sec .peopleimg_wrap {
-        top: 60vh;
-        width: 64%;
-        left: 40%;
-    } */
     .main_sec .peopleimg_wrap .people_img {
 
     }
     .main_sec .compu_img {
-        top: 84vh;
-        right: 20%;
+        top: 85vh;
+        right: 50%;
         width: 30%;
+    }
+    .main_sec .scroll_ani {
+        bottom: -30%;
     }
 
 
     /* about section2 */
     .about_sec {
     }
+
     .about_sec .top_wrap {
-        padding: 180px 4% 120px;
+        padding: 300px 4% 120px;
+    }
+    .about_sec .top_wrap h3 {
+        margin-bottom: 30px;
+    }
+    .about_sec .top_wrap h3 svg {
+        width: 30%;
+        top: -30%;
+    }
+    .about_sec .top_wrap p ~ p {
+        margin-top: 16px;
+    }
+    .about_sec .top_wrap h3 {
+        font-size: 34px;
+    }
+    .about_sec .top_wrap p {
+        font-size: 18px;
     }
 
     .about_sec .bottom_wrap .history_list {
@@ -1249,11 +1351,21 @@ header h1 span {
     .about_sec .bottom_wrap .history_list li ~ li {
         margin-left: 0px;
     }
+    .about_sec .bottom_wrap .history_list li .his_name {
+        font-size: 18px;
+    }
 
 
     /* skill section3 */
-    .skill_sec .skill_wrap {
+    .skill_sec .skill_text h3 {
+        margin-bottom: 30px;
+        font-size: 34px;
     }
+    .skill_sec .skill_text h3 svg {
+        width: 30%;
+        left: 8%;
+    }
+
     .skill_sec .skill_wrap .skill_img {
         display: none;
     }
@@ -1266,20 +1378,53 @@ header h1 span {
         font-size: 4.4vw;
     }
 
+    /* prointro section4 */
+    .prointro_sec svg{
+        width: 16%;
+    }
+
+    .prointro_sec h3 {
+        font-size: 30px;
+        -webkit-text-stroke: 0.4px #fff;
+    }
+
+    .prointro_sec .compu_img2 {
+    }
+    .prointro_sec .prointro_list li {
+    }
+    .prointro_sec .prointro_list li img {
+    }
+
 
     /* proje section5 */
     .proje_sec1 {
         padding: 0 4% 0 4%;
     }
+
+    .proje_sec1 .index {
+        /* display: none; */
+    }
+
     .proje_sec1 .project {
         flex-direction: column;
     }
-    .proje_sec1 .project .proje1_info 
-    {
+    .proje_sec1 .project .proje1_info {
         width: 100%;
     }
     .proje_sec1 .project .proje1_img {
         width: 100%;
+        height: 400px;
+    }
+
+
+    /* proje section */
+    .proje_sec2 h3 svg {
+        width: 30%;
+        top: -30%;
+    }
+
+    .proje_sec2 .mySwiper .swiper-wrapper .swiper-slide a .proje_info .proje_title {
+        font-size: 16px;
     }
     
 
@@ -1287,17 +1432,36 @@ header h1 span {
     /* contact section7 */
     .contact_sec .wrap {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .contact_sec .left_wrap {
         width: 100%;
+        padding-top: 90px;
+    }
+    .contact_sec .left_wrap .run_img {
+        position: relative;
+    }
+    .contact_sec .left_wrap .talk_img.talk1 {
+        top: 20%;
+    }
+    .contact_sec .left_wrap .talk_img.talk2 {
+        top: 2%;
+    }
+    .contact_sec .left_wrap .talk_img.talk3 {
+        top: 6%;
     }
 
     .contact_sec .right_wrap {
         width: 100%;
     }
     .contact_sec .right_wrap h3{
-        color: var(--color-black)f;
+        font-size: 34px;
+    }
+
+    .contact_sec .right_wrap .box svg {
+        width: 30%;
+        top: -40%;
+        left: 34%;
     }
 }

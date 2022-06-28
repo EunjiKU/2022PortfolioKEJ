@@ -55,21 +55,21 @@ const text = document.querySelector('.circle p');
 
 text.innerHTML = text.innerText.split("").map(
     (char, i) =>
-        `<span style="transform:rotate(${i * 22.5}deg)">${char}</span>`
+        `<span style="transform:rotate(${i * 17}deg)">${char}</span>`
 ).join("");
 
 
 // main section1 - code cursor
-const mainSec = document.querySelector('.main_sec');
-const cursorCode = document.querySelector('.code_cursor');
+// const mainSec = document.querySelector('.main_sec');
+// const cursorCode = document.querySelector('.code_cursor');
 
-mainSec.addEventListener('mousemove', (e) => {
-    let x = e.clientX;
-    let y = e.clientY;
+// mainSec.addEventListener('mousemove', (e) => {
+//     let x = e.clientX;
+//     let y = e.clientY;
 
-    cursorCode.style.left = x + "px";
-    cursorCode.style.top = y + "px";
-});
+//     cursorCode.style.left = x + "px";
+//     cursorCode.style.top = y + "px";
+// });
 
 
 // scroll
@@ -185,36 +185,36 @@ window.addEventListener('scroll', () => {
     const path5Length = path5.getTotalLength();
     const path6Length = path6.getTotalLength();
 
-        path2.style.strokeDasharray  = path2Length;
-        path2.style.strokeDashoffset  = path2Length;
+        // path2.style.strokeDasharray  = path2Length;
+        // path2.style.strokeDashoffset  = path2Length;
 
-        path3.style.strokeDasharray  = path3Length;
-        path3.style.strokeDashoffset  = path3Length;
+        // path3.style.strokeDasharray  = path3Length;
+        // path3.style.strokeDashoffset  = path3Length;
 
-        path4.style.strokeDasharray  = path4Length;
-        path4.style.strokeDashoffset  = path4Length;
+        // path4.style.strokeDasharray  = path4Length;
+        // path4.style.strokeDashoffset  = path4Length;
 
-        path5.style.strokeDasharray  = path5Length;
-        path5.style.strokeDashoffset  = path5Length;
+        // path5.style.strokeDasharray  = path5Length;
+        // path5.style.strokeDashoffset  = path5Length;
 
-        path6.style.strokeDasharray  = path6Length;
-        path6.style.strokeDashoffset  = path6Length;
+        // path6.style.strokeDasharray  = path6Length;
+        // path6.style.strokeDashoffset  = path6Length;
 
-        function calcDashoffset(scrollY, element, length) {
-            const ratio = (scrollY - element.offsetTop) / element.offsetHeight
-            const value = length - (length * ratio)
-            return value < 0 ? 0 : value > length ? length : value
-        }
+        // function calcDashoffset(scrollY, element, length) {
+        //     const ratio = (scrollY - element.offsetTop) / element.offsetHeight
+        //     const value = length - (length * ratio)
+        //     return value < 0 ? 0 : value > length ? length : value
+        // }
 
-        const scrollY = window.scrollY + (window.innerHeight / 2);
+        // const scrollY = window.scrollY + (window.innerHeight / 2);
 
-        path2.style.strokeDashoffset = calcDashoffset(scrollY, aboutSec, path2Length); 
-        path3.style.strokeDashoffset = calcDashoffset(scrollY, skillSec, path3Length); 
-        path4.style.strokeDashoffset = calcDashoffset(scrollY, prointroSec, path4Length);
-        path5.style.strokeDashoffset = calcDashoffset(scrollY, projeSec2, path5Length);
-        path6.style.strokeDashoffset = calcDashoffset(scrollY, contactSec, path6Length);
+        // path2.style.strokeDashoffset = calcDashoffset(scrollY, aboutSec, path2Length); 
+        // path3.style.strokeDashoffset = calcDashoffset(scrollY, skillSec, path3Length); 
+        // path4.style.strokeDashoffset = calcDashoffset(scrollY, prointroSec, path4Length);
+        // path5.style.strokeDashoffset = calcDashoffset(scrollY, projeSec2, path5Length);
+        // path6.style.strokeDashoffset = calcDashoffset(scrollY, contactSec, path6Length);
 
-        console.log(path4);
+        // console.log(path4);
 });
 
 
@@ -256,7 +256,7 @@ blackWrap.addEventListener('click', () => {
 // swiper
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
-    spaceBetween: 30,
+    spaceBetween: 10,
     loop: true,
     pagination: {
         // el: ".swiper-pagination",
@@ -265,9 +265,11 @@ var swiper = new Swiper(".mySwiper", {
     breakpoints: { //반응형 조건 속성
         769: { //769 이상일 경우
             slidesPerView: 4,
+            spaceBetween: 30,
         },
         1025: { //1025 이상일 경우
             slidesPerView: 7,
+            spaceBetween: 30,
         },
     }
 });
@@ -275,3 +277,20 @@ var swiper = new Swiper(".mySwiper", {
 
 // AOS
 AOS.init();
+
+
+// 
+const bottomTit = document.querySelector('.bottom_tit');
+
+function mobiletitFunc(){
+    if(window.innerWidth < 769){
+        bottomTit.innerHTML = '<h3 class="bottom_tit">저의 커리어를</br>보여드릴게요.</h3>'
+    }else {
+        bottomTit.innerHTML = '<h3 class="bottom_tit">저의 커리어를 보여드릴게요.</h3>' 
+    }
+}
+
+mobiletitFunc();
+window.addEventListener('resize', () => {
+    mobiletitFunc();
+});

@@ -101,8 +101,8 @@ $(function (){
         delay: 2500,
       },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".main-next",
+      prevEl: ".main-prev",
     },
   });
 
@@ -115,8 +115,8 @@ $(function (){
     loop: true,
     loopFillGroupWithBlank: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".guide-next",
+      prevEl: ".guide-prev",
     },
     breakpoints: { //반응형 조건 속성
       769: {
@@ -139,8 +139,8 @@ $(function (){
     loop: true,
     loopFillGroupWithBlank: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".event-next",
+      prevEl: ".event-prev",
     },
     breakpoints: { //반응형 조건 속성
       769: {
