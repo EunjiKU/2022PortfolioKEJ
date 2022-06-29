@@ -5,6 +5,10 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         loading.style.display = "none";
     }, 800);
+
+    AOS.init();
+    mousecursorFunc();
+    circleFunc();
 });
 
 
@@ -15,11 +19,13 @@ const bottomWrap = document.querySelector('.bottom_wrap');
 const swiperLists = document.querySelectorAll('.swiper-slide');
 const btns = document.querySelectorAll('.btn');
 
-document.addEventListener('mousemove', e => {
-    cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-});
+function mousecursorFunc (){
+    document.addEventListener('mousemove', e => {
+        cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+    });        
+};
 
-bottomWrap.addEventListener('mousemove', () => {
+bottomWrap.addEventListener('mouseover', () => {
     cursor.classList.add('about_cursor1');
     cursor2.classList.add('about_cursor2');
 });
@@ -29,7 +35,7 @@ bottomWrap.addEventListener('mouseout', () => {
 });
 
 btns.forEach((btn) => {
-    btn.addEventListener('mousemove', () => {
+    btn.addEventListener('mouseover', () => {
         cursor.classList.add('btn_cursor1');
         cursor2.classList.add('btn_cursor2');
     });
@@ -40,7 +46,7 @@ btns.forEach((btn) => {
 });
 
 swiperLists.forEach(list => {
-    list.addEventListener('mousemove', () => {
+    list.addEventListener('mouseover', () => {
         cursor.classList.add('swiper_cursor1');
     });
     list.addEventListener('mouseout', () => {
@@ -51,19 +57,42 @@ swiperLists.forEach(list => {
 
 // header - circle rotate
 const circle = document.querySelector('.circle');
+const arrowImg = document.querySelector('.arrowImg img')
 const text = document.querySelector('.circle p');
 
-text.innerHTML = text.innerText.split("").map(
-    (char, i) =>
-        `<span style="transform:rotate(${i * 17}deg)">${char}</span>`
-).join("");
+function circleFunc(){
+    text.innerHTML = text.innerText.split("").map(
+        (char, i) =>
+            `<span style="transform:rotate(${i * 17}deg)">${char}</span>`
+    ).join("");    
+}
+
+// header - circle click window scroll top
+circle.addEventListener('click',function(){
+    scrollToTop();
+});
 
 
-// scroll
+
+function scrollToTop(){
+    let scrollInterval = setInterval(function(){
+        if(window.scrollY != 0){
+            window.scrollBy(0,-200);
+        }else{
+            clearInterval(scrollInterval);
+        }
+    },15);
+}
+
+
+// All scroll 
+const mainSec = document.querySelector('.main_sec');
 const peopleImgWrap = document.querySelector('.peopleimg_wrap');
 
 const aboutSec = document.querySelector('.about_sec');
 const blackBox = document.querySelector('.black_box');
+
+const skillSec = document.querySelector('.skill_sec');
 
 const prointroSec = document.querySelector('.prointro_sec');
 const prointroList = document.querySelector('.prointro_list');
@@ -78,10 +107,46 @@ const projeSec2 = document.querySelector('.proje_sec2');
 
 const contactSec = document.querySelector('.contact_sec');
 
+// svg
+const path1 = document.querySelector('.path1');
+const path2 = document.querySelector('.path2');
+const path3 = document.querySelector('.path3');
+const path4 = document.querySelector('.path4');
+const path5 = document.querySelector('.path5');
 
+const path1Length = path1.getTotalLength();
+const path2Length = path2.getTotalLength();
+const path3Length = path3.getTotalLength();
+const path4Length = path4.getTotalLength();
+const path5Length = path5.getTotalLength();
+
+path1.style.strokeDasharray  = path1Length;
+path1.style.strokeDashoffset =  path1Length;
+
+path2.style.strokeDasharray  = path2Length;
+path2.style.strokeDashoffset  = path2Length;
+
+path3.style.strokeDasharray  = path3Length;
+path3.style.strokeDashoffset  = path3Length;
+
+path4.style.strokeDasharray  = path4Length;
+path4.style.strokeDashoffset  = path4Length;
+
+path5.style.strokeDasharray  = path5Length;
+path5.style.strokeDashoffset  = path5Length;
+
+
+// 
 window.addEventListener('scroll', () => {
     let window_height = window.innerHeight;
     let window_scroll = window.scrollY;
+
+    // header - circle scroll top
+    if(document.body.scrollHeight < window_scroll + window_height + 100){
+        arrowImg.classList.add('active');
+    }else{
+        arrowImg.classList.remove('active');
+    }
 
 
     // header - circle scroll
@@ -157,51 +222,26 @@ window.addEventListener('scroll', () => {
         contactSec.style.height = (window_scroll + window_height) - contact_offset + "px";
     }
 
-
+    
     // svg
-    const skillSec = document.querySelector('.skill_sec');
-    const path2 = document.querySelector('.path2');
-    const path3 = document.querySelector('.path3');
-    const path4 = document.querySelector('.path4');
-    const path5 = document.querySelector('.path5');
-    const path6 = document.querySelector('.path6');
+    const svgBox1 = document.querySelector('.svg_box1');
+    const skillText = document.querySelector('.skill_text');
+    const svgBox2 = document.querySelector('.svg_box2');
 
-    const path2Length = path2.getTotalLength();
-    const path3Length = path3.getTotalLength();
-    const path4Length = path4.getTotalLength();
-    const path5Length = path5.getTotalLength();
-    const path6Length = path6.getTotalLength();
+    function calcDashoffset(scrollY, element, length) {
+        const ratio = (scrollY - element.offsetTop) / element.offsetHeight
+        const value = length - (length * ratio)
+        return value < 0 ? 0 : value > length ? length : value
+    }
 
-    // path2.style.strokeDasharray  = path2Length;
-    // path2.style.strokeDashoffset  = path2Length;
+    const scrollY = window.scrollY + (window.innerHeight / 7);
+    const scrollY2 = window.scrollY + (window.innerHeight / 2);
 
-    // path3.style.strokeDasharray  = path3Length;
-    // path3.style.strokeDashoffset  = path3Length;
-
-    // path4.style.strokeDasharray  = path4Length;
-    // path4.style.strokeDashoffset  = path4Length;
-
-    // path5.style.strokeDasharray  = path5Length;
-    // path5.style.strokeDashoffset  = path5Length;
-
-    // path6.style.strokeDasharray  = path6Length;
-    // path6.style.strokeDashoffset  = path6Length;
-
-    // function calcDashoffset(scrollY, element, length) {
-    //     const ratio = (scrollY - element.offsetTop) / element.offsetHeight
-    //     const value = length - (length * ratio)
-    //     return value < 0 ? 0 : value > length ? length : value
-    // }
-
-    // const scrollY = window.scrollY + (window.innerHeight / 2);
-
-    // path2.style.strokeDashoffset = calcDashoffset(scrollY, aboutSec, path2Length); 
-    // path3.style.strokeDashoffset = calcDashoffset(scrollY, skillSec, path3Length); 
-    // path4.style.strokeDashoffset = calcDashoffset(scrollY, prointroSec, path4Length);
-    // path5.style.strokeDashoffset = calcDashoffset(scrollY, projeSec2, path5Length);
-    // path6.style.strokeDashoffset = calcDashoffset(scrollY, contactSec, path6Length);
-
-    // console.log(path4);
+    path1.style.strokeDashoffset = calcDashoffset(scrollY, mainSec, path1Length); 
+    path2.style.strokeDashoffset = calcDashoffset(scrollY2, svgBox1, path2Length); 
+    path3.style.strokeDashoffset = calcDashoffset(scrollY2, skillSec, path3Length); 
+    path4.style.strokeDashoffset = calcDashoffset(scrollY2, prointroSec, path4Length);
+    path5.style.strokeDashoffset = calcDashoffset(scrollY2, svgBox2, path5Length);
 });
 
 
@@ -249,21 +289,17 @@ var swiper = new Swiper(".mySwiper", {
         // el: ".swiper-pagination",
         clickable: true,
     },
-    breakpoints: { //반응형 조건 속성
-        769: { //769 이상일 경우
+    breakpoints: {
+        769: {
             slidesPerView: 4,
             spaceBetween: 30,
         },
-        1025: { //1025 이상일 경우
+        1025: {
             slidesPerView: 7,
             spaceBetween: 30,
         },
     }
 });
-
-
-// AOS
-AOS.init();
 
 
 // 

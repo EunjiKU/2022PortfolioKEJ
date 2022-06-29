@@ -119,12 +119,19 @@ body::-webkit-scrollbar-button {
 /* header */
 header {}
 
-header .harrow {
+header .arrowImg {
     position: fixed;
     left: 83px;
     top: 83px;
     z-index: 99999;
     animation: top-bottomAni2 1s infinite ease-in-out alternate;
+    pointer-events: none;
+}
+header .arrowImg img {
+    transition: all .4s;
+}
+header .arrowImg img.active{
+    transform: rotate(180deg);
 }
 
 @keyframes top-bottomAni2 {
@@ -146,6 +153,7 @@ header .circle {
     border-radius: 100%;
     background-color: #EDECE8;
     z-index: 9999;
+    cursor: pointer;
 }
 
 header .circle p {
@@ -650,7 +658,6 @@ header h1 span {
 
 .proje_sec1 .project .proje1_info h4 {
     font-size: 50px;
-    color: var(--color-black);
     font-weight: 900;
     margin-bottom: 60px;
 }
@@ -744,19 +751,19 @@ header h1 span {
     transform: translateY(-50%);
 }
 
-.proje_sec1 .project1 .title {
-    color: #FF0000;
+.proje_sec1 .project1 h4 {
+    color: var(--color-black);
 }
 
-.proje_sec1 .project2 .title {
+.proje_sec1 .project2 h4 {
     color: #991509;
 }
 
-.proje_sec1 .project3 .title {
-    color: #FF0000;
+.proje_sec1 .project3 h4 {
+    color: #0FB4A6;
 }
 
-.proje_sec1 .project4 .title {
+.proje_sec1 .project4 h4 {
     color: #F67392;
 }
 
@@ -764,11 +771,11 @@ header h1 span {
     color: #395082;
 }
 
-.proje_sec1 .project5 .title {
+.proje_sec1 .project5 h4 {
     color: #252C54;
 }
 
-.proje_sec1 .project6 .title {
+.proje_sec1 .project6 h4 {
     color: #FF6E0B;
 }
 
@@ -846,7 +853,7 @@ header h1 span {
     width: 40%;
     height: 90%;
     transform: translate(-50%, -50%);
-    z-index: 999;
+    z-index: 9999999;
     overflow: auto;
 }
 
@@ -883,7 +890,7 @@ header h1 span {
     background-color: #000;
     opacity: 0.7;
     cursor: pointer;
-    z-index: 99;
+    z-index: 999999;
     transition: all .1s;
 }
 
@@ -1203,7 +1210,7 @@ header h1 span {
     }
 
     /* header */
-    header .harrow {
+    header .arrowImg {
         left: 65px;
         top: 65px;
     }
@@ -1414,12 +1421,9 @@ header h1 span {
     }
 
     /* header */
-    header .harrow {
-        position: fixed;
+    header .arrowImg {
         left: 48px;
         top: 48px;
-        z-index: 99999;
-        animation: top-bottomAni2 1s infinite ease-in-out alternate;
     }
 
     header .circle {
@@ -1457,11 +1461,22 @@ header h1 span {
     /* main section1 */
     .main_sec {}
 
+    .main_sec .line-wrapper {
+    }
+    .main_sec svg {
+        position: absolute;
+        top: -24%;
+        left: -50px;
+        z-index: -9;
+    }
+
     .main_sec .peopleimg_wrap {
-        position: fixed;
+        /* position: fixed; */
+        /* position: static; */
+        /* position: sticky; */
         /* position: absolute; */
-        /* position: relative; */
-        top: 60vh;
+        position: relative;
+        top: -60vh;
         width: 80%;
         left: 10%;
     }
@@ -1584,6 +1599,10 @@ header h1 span {
         width: 100%;
         padding: 100px 0 40px;
     }
+    .proje_sec1 .project .proje1_info h4 {
+        font-size: 36px;
+        margin-bottom: 28px;
+    }
 
     .proje_sec1 .project .proje1_img {
         width: 100%;
@@ -1645,9 +1664,16 @@ header h1 span {
         font-size: 16px;
     }
 
+    .modal_wrap {
+        width: 70%;
+    }
 
 
     /* contact section7 */
+    .contact_sec {
+        background: none;
+    }
+
     .contact_sec .wrap {
         display: flex;
         flex-direction: column-reverse;
